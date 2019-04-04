@@ -1,0 +1,95 @@
+/*导航栏样式*/
+.navbar{
+	background: #ffffff!important;
+	/*border-bottom: 1px solid red;*/
+}
+
+.navbar .container #collapsibleNavbar ul li a{
+	font-weight: bold;
+	color: #333333;
+	font-size: .9rem;
+	font-family:'MicrosoftYaHei-Bold';
+	transition: all .3s ease;
+	padding:1rem;
+}
+.navbar .container #collapsibleNavbar .navbar-nav{
+	margin-left: 5.62rem;
+}
+.navbar .container #collapsibleNavbar ul li a:hover{
+	color:#29CC5F;
+	
+}
+
+/*折叠导航按钮样式*/
+.navbar-dark .navbar-toggler {
+    background-color: rgba(102,102,102,.8);
+    border-color: rgba(115,115,115,.8);
+}
+  
+/*登录注册*/
+.navbar .container #collapsibleNavbar .loginBox a{
+	font-size: 0.87rem;
+	color:#333;
+	font-weight: bold;
+	transition: all .3s ease;
+}
+.navbar .container #collapsibleNavbar .loginBox a:hover{
+	color: #33A55A;
+}
+.navbar .container #collapsibleNavbar .loginBox #login{
+	padding-right: 10px;
+}
+.navbar .container #collapsibleNavbar .loginBox #register{
+	padding-left: 10px;
+}
+
+/*导航适配*/
+
+
+@media screen and (max-width: 640px) {
+	.navbar .container #collapsibleNavbar ul li a{
+		padding-left: 0;
+	}
+
+	/*登录注册按钮*/
+	.navbar .container #collapsibleNavbar .loginBox{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: 0px!important;
+	}
+	.navbar .container #collapsibleNavbar .loginBox a{
+		display: block;
+		width: 48%;
+		border-radius: 5px;
+		text-align: center;
+	}
+	.navbar .container #collapsibleNavbar .loginBox #login{
+		background: #33A55A;
+		color: #ffffff;
+		padding-right: 0px;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+	}
+	.navbar .container #collapsibleNavbar .loginBox #register{
+		background: #e6e6e6;
+		color: #000000;
+		padding-left: 0px;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+	}
+	
+}
+/*堆叠导航*/
+@media screen and (max-width: 996px){
+	.navbar .container #collapsibleNavbar .navbar-nav{
+	    margin-left:0;
+	}
+	.navbar .container #collapsibleNavbar .loginBox{
+		margin-left: 15px;
+	}
+	
+}
+
+
+

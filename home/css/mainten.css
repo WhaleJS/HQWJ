@@ -1,0 +1,138 @@
+body{
+	background: #ffffff!important;
+}
+.jumbotron{
+	background:#000000!important;
+}
+/*我要修车/取车*/
+.btn_box{
+	padding-top: 3rem;
+}
+.btn_box button{
+	padding-left:2rem;
+	padding-right:2rem;
+	
+}
+.btn_box #xiucar{
+	margin-right:1rem;
+}
+.btn_box #qucar{
+	margin-left: 1rem;
+}
+
+/*页面容器*/
+
+.mainten{
+	background: #ffffff;
+	position:relative;
+	bottom:3.2rem;
+	border: 1px solid black;
+}
+/*地图显示,地区选择*/
+.mainten .seclect_box{
+}
+.mainten .seclect_box .form-group{
+	width: 22%;
+	margin-top:3rem;
+}
+.mainten .seclect_box select{
+	border-radius: 0.31rem;
+	color: #595959;
+	background:#f3f3f3;
+	font-size: 0.87rem;
+	border: none;
+	outline:0;
+	appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+
+/*地图*/
+.mainten .d_box{
+	padding-top: 1.25rem;
+	border-bottom: 1px solid red;
+}
+.mainten .d_box .ditu{
+	height: 400px;
+	background: darkcyan;
+	
+}
+.mainten .d_box .list_dian{
+	height: 400px;
+	background: darkgoldenrod;
+	padding-left: 0;
+	padding-right: 0;
+	overflow: auto;
+}
+.mainten .d_box .list_dian ul{
+	height: 100%;
+}
+.mainten .d_box .list_dian ul li{
+	background: darkgray;
+	cursor: pointer;
+}
+.mainten .d_box .list_dian ul li p{
+	margin-bottom: 0;
+	padding-left: 1rem;
+	
+}
+.mainten .d_box .list_dian ul li .title{
+	padding-bottom: .8rem;
+	padding-top: .8rem;
+	font-weight: bold;
+}
+
+.mainten .d_box .list_dian ul li .server{
+	font-size: 0.87rem;
+	padding-bottom:.2rem;
+}
+.mainten .d_box .list_dian ul li .address{
+	font-size: 0.93rem;
+	padding-bottom:.8rem;
+}
+/*媒体查询*/
+@media screen and (max-width: 768px){
+	/*下拉框*/
+	.mainten .seclect_box .col-12{
+		flex-direction: column;
+	}
+	.mainten .seclect_box .form-group{
+		width: 90%;
+	}
+	.mainten .seclect_box .form-group{
+		margin-bottom: 3rem;
+		margin-top: 0;
+	}
+	/*门店列表*/
+	.mainten .d_box .list_dian{
+		height: 400px;
+		background: darkgoldenrod;
+		padding-left:15px;
+		padding-right:15px;
+		overflow: auto;
+	}
+	/*地图*/
+	.mainten .d_box .ditu{
+		height: 400px;
+		background: darkcyan;
+		margin-bottom: 1rem;
+	}
+}
+
+@media screen and (max-width: 576px){
+	/*定位取消*/
+	.mainten{
+		bottom: 0;
+	}
+	/*按钮左右margin*/
+	.btn_box #xiucar{
+	margin-right:0;
+}
+	.btn_box #qucar{
+		margin-left:0;
+	}
+
+}
+
+
+

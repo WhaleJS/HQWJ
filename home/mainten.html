@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.css"/>
+	  <!--mainten.css-->
+	  <link rel="stylesheet" type="text/css" href="css/mainten.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
+	  <!--尾部css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/footer.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
+	  <!--layUI.css-->
+	  <!--<link rel="stylesheet" type="text/css" href="dist/layui/css/layui.css"/>-->
+	  <!--jquery-->
+	  <script src="js/jquery-3.3.1.min.js"></script>
+	   <!--复用导航.js-->
+	  <script src="repeat/js/repeat.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--layUI.js-->
+	  <script src="dist/layui/layui.js"></script>
+	  <!--百度地图-->
+	  <script src="http://api.map.baidu.com/api?v=2.0&ak=B39BsnE2wcUjUUGoSePHL2xtIzmkMAUE"></script>
+    <title>维修服务</title>
+	</head>
+<body>
+		 <!--插入导航-->
+		<div class="first_div"></div>
+		
+		<!--banner-->
+			<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading" style="color: #ffffff;">环球万家-汽车全能管家</h1>
+          <p style="color: #ffffff;padding-top: 2rem;">细致入微，精心呵护</p>
+          <p class="btn_box">
+            <button href="#" class="btn btn-success my-2" id="xiucar">我要修车</button>
+            <button href="#" class="btn btn-success my-2" id="qucar">我要取车</button>
+          </p>
+        </div>
+      </section>
+			
+			<!--页面容器-->
+			<div class="container mainten">
+				 <!--地区列表-->
+				 <div class="row seclect_box">
+					 	<div class="col-12 d-flex align-items-center justify-content-around">
+								 <!--省份-->
+			  				<div class="form-group">
+			  					 <select name="provinces" class="form-control">
+								 	  <option value="">请选择省份</option>
+								 	  <option value="">四川</option>
+								 	  <option value="">云南</option>
+								 	  <option value="">贵州</option>
+								 </select>
+			  				</div>
+								
+								 <!--城市-->
+								 <div class="form-group">
+									 <select name="city" class="form-control">
+									  <option value="">请选择城市</option>
+									 	<option value="">成都</option>
+									 	<option value="">昆明</option>
+									 	<option value="">贵州</option>
+									 </select>
+								 </div>
+								 <!--区县-->
+								 <div class="form-group">
+								  <select name="county" class="form-control">
+									 	<option value="">请选择区县</option>
+									 	<option value="">金堂</option>
+									 	<option value="">高新</option>
+									 	<option value="">武侯</option>
+									 </select>
+								 </div>
+								 <!--门店-->
+								 <div class="form-group">
+									 <select name="stores" class="form-control">
+									 	<option value="">请选择门店</option>
+									 	<option value="">金堂店</option>
+									 </select>
+								 </div>
+						</div>
+				 </div>
+				 
+				 <!--百度地图-->
+				 <div class="row d_box">
+				 	 <div class="col-md-8 col-12 ditu" id="Bmap_box">
+				 	 	
+				 	 </div>
+				 	  <div class="col-md-4 col-12 list_dian">
+				 	 	 <ul>
+				 	 	 	  <li style="background:#e3e3e3;">
+				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <div>
+				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
+				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
+				 	 	 	  	 </div>
+				 	 	 	  </li>
+				 	 	 	   <li style="background:#f3f3f3;">
+				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <div>
+				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
+				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
+				 	 	 	  	 </div>
+				 	 	 	  </li>
+				 	 	 	  <li style="background:#e3e3e3;">
+				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <div>
+				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
+				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
+				 	 	 	  	 </div>
+				 	 	 	  </li>
+				 	 	 	  <li style="background:#ef3f3f3;">
+				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <div>
+				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
+				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
+				 	 	 	  	 </div>
+				 	 	 	  </li>
+				 	 	 </ul>
+				 	 </div>
+				 </div>
+			</div>
+			
+		<!--尾部插入footer-->
+		<div class="last_div"></div>
+		<!--脚本-->
+		<script type="text/javascript">
+//			地图实例
+//      new一个地图实例
+				var map = new BMap.Map("Bmap_box"); 
+//				设置地图坐标-经纬度
+				var point = new BMap.Point(104.07,30.67); 
+//				选择一个中心点
+				map.centerAndZoom(point, 15); 
+				// 地图平移缩放控件
+            map.addControl(new BMap.NavigationControl());
+            // 比例尺控件
+            map.addControl(new BMap.ScaleControl());
+            // 缩略图控件    
+			map.addControl(new BMap.OverviewMapControl());
+			// 地图类型控件    
+			map.addControl(new BMap.MapTypeControl());  
+		</script>
+</body>
+</html>

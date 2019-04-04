@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="home/repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="home/dist/bootstrap/css/bootstrap.css"/>
+	  <!--index.css-->
+	  <link rel="stylesheet" type="text/css" href="home/css/index.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="home/repeat/css/header.css"/>
+	  <!--尾部css-->
+	  <link rel="stylesheet" type="text/css" href="home/repeat/css/footer.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="home/dist/font/iconfont.css"/>
+	  <!--jquery-->
+	  <script src="home/js/jquery-3.3.1.min.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="home/dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--轮播图无法使用手势滑动-->
+	  <script src="home/repeat/js/toucher.js"></script>
+	  <!--vue-->
+	  <!--<script src="home/js/vue.js"></script>-->
+    <title>首页</title>
+    <style type="text/css">
+  	/*大于762*/
+  	@media screen and (min-width: 576px) {
+  			.index_news .news_box .list_detail{
+  				width: 49%;
+  				padding-left: 15px;
+  				padding-right: 15px;
+  			}
+  			
+  	}
+  	/*大于762*/
+  	@media screen and (max-width: 576px) {
+  			.index_news .news_box .list_detail{
+  				width: 100%;
+  				padding-left: 15px;
+  				padding-right: 15px;
+  			}
+  			
+  	}
+  	
+    </style>
+	</head>
+<body>
+	  <!--插入导航-->
+		<!--<div class="first_div"></div>-->
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<div class="container">
+			  <a class="navbar-brand" href="#"><img src="../../home/img/logo.png"/></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+			    <ul class="navbar-nav">
+			      <li class="nav-item">
+			        <a class="nav-link index_cor" href="index.html">首页</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../home/about.html">关于公司</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../home/mainten.html">维修服务</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../home/team.html">团队风采</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="../../home/news.html">万家新闻</a>
+			      </li> 
+			    </ul>
+			    <!--登录注册-->
+		    	<div class="loginBox">
+		    		<a href="javascript:viod(0)" id="login">个人中心</a>
+		    		<a href="javascript:viod(0)" id="register">退出</a>
+		    	</div>
+			  </div>
+			</div>
+		</nav>
+			<!--轮播-->
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			  <!-- 指示符 -->
+			  <ul class="carousel-indicators">
+			    <li data-target="#demo" data-slide-to="0" class="active"></li>
+			    <li data-target="#demo" data-slide-to="1"></li>
+			    <li data-target="#demo" data-slide-to="2"></li>
+			  </ul>
+			  <!-- 轮播图片 -->
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="img-fluid" src="home/img/banner.png">
+			    </div>
+			    <div class="carousel-item">
+			    	<img class="img-fluid" src="home/img/banner.png">
+			    </div>
+			    <div class="carousel-item">
+			    	<img class="img-fluid" src="home/img/banner.png">
+			    </div>
+			  </div>
+			  <!-- 左右切换按钮 -->
+			  <a class="carousel-control-prev" href="#demo" data-slide="prev" style="display:none;">
+			    <span class="carousel-control-prev-icon"></span>
+			  </a>
+			  <a class="carousel-control-next" href="#demo" data-slide="next" style="display:none;">
+			    <span class="carousel-control-next-icon"></span>
+			  </a>
+		</div>
+		
+		
+		<!--页面容器-->
+			<div class="container body_box">
+				 <!--主营业务-->
+				 <div class="row index_top justify-content-center">
+				 	  	<div class="col-md-4 top_title"><h4 class="text-center">主营业务</h4></div>
+				 	  	<!--tab栏目-->
+				 	  	<div class="row col-md-12 tab_box d-flex justify-content-between">
+				 	  			<div class="col-5 col-md-2 tab_img d-flex flex-column align-items-center justify-content-around"><img src="home/img/by.png"/><small>汽车保养</small></div>
+				 	  			<div class="col-5 col-md-2 tab_img d-flex flex-column align-items-center justify-content-around"><img src="home/img/wx.png"/><small>汽车维修</small></div>
+				 	  			<div class="col-5 col-md-2 tab_img d-flex flex-column align-items-center justify-content-around"><img src="home/img/fd.png"/><small>汽车美容</small></div>
+				 	  			<div class="col-5 col-md-2 tab_img d-flex flex-column align-items-center justify-content-around"><img src="home/img/lt.png"/><small>轮胎护理</small></div>
+				 	  			<div class="col-5 col-md-2 tab_img d-flex flex-column align-items-center justify-content-around"><img src="home/img/my.png"/><small>换冷冻液</small></div>
+				 	  	</div>
+				 </div>
+				 
+				 <!--关于我们-->
+		 	   <div class="row index_middle justify-content-center">
+		 	  			<div class="col-md-4 top_title"><h4 class="text-center">创始人</h4></div>
+		 	  			<!--关于我们联合-->
+		 	  			<div class="col-md-12">
+									<img class="img-fluid" src="home/img/chuang.png" style="padding-top:2.5rem;">
+		 	  			</div>
+		 	   </div>
+		 	   
+		 	   <!--团队风采-->
+		 	   <div class="row index_bottom justify-content-center">
+		 	   		<div class="col-md-4 top_title"><h4 class="text-center">团队风采</h4></div>
+		 	   		<!--明星列表-->
+		 	   		<div class="row col-md-12 start_list d-flex justify-content-around align-items-center">
+		 	   			
+		 	   				<div class="col-md-3 d-flex flex-column justify-content-around align-items-center">
+		 	   						<img class="guan" src="home/img/crown.png"/>
+		 	   						<div id="start_img"></div>
+		 	   						<span id="start_detail">本月服务明星</span>
+		 	   						<p id="start_name">小王</p>
+		 	   						<div class="start_num d-flex justify-content-around align-items-center">
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   						</div>
+		 	   				</div>
+		 	   				
+		 	   				<div class="col-md-3 d-flex flex-column justify-content-around align-items-center">
+		 	   						<img class="guan" src="home/img/crown.png"/>
+		 	   						<div id="start_img"></div>
+		 	   						<span id="start_detail">本月服务明星</span>
+		 	   						<p id="start_name">小王</p>
+		 	   						<div class="start_num d-flex justify-content-around align-items-center">
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   						</div>
+		 	   				</div>
+		 	   				
+		 	   				<div class="col-md-3 d-flex flex-column justify-content-around align-items-center">
+		 	   						<img class="guan" src="home/img/crown.png"/>
+		 	   						<div id="start_img"></div>
+		 	   						<span id="start_detail">本月服务明星</span>
+		 	   						<p id="start_name">小王</p>
+		 	   						<div class="start_num d-flex justify-content-around align-items-center">
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   								<img src="home/img/xing.png" alt="" />
+		 	   						</div>
+		 	   				</div>
+		 	   				
+		 	   		</div>
+		 	   		
+		 	   </div>
+		 	   
+		 	   <!--重要新闻-->
+		 	   <div class="row index_news justify-content-center">
+		 	   		<div class="col-md-4 top_title"><h4 class="text-center">最新要闻</h4></div>
+		 	   		<!--新闻列表-->
+		 	   		<div class="col-md-12 news_box d-flex justify-content-between flex-wrap">
+		 	   					 <!--新闻选项列表-->
+		 	   						<div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							 <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   						
+		 	   					  <div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							  <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   						
+		 	   					  <div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							  <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   						
+		 	   					  <div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							  <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   						
+		 	   						 <div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							  <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   						
+		 	   						 <div class="list_detail d-flex justify-content-between align-items-center">
+		 	   							  <div class="tab_Date d-flex justify-content-around align-items-center flex-column">
+		 	   									  <p>29</p>
+		 	   									  <span>2019.03</span>
+		 	   								</div> 
+		 	   								<div class="tab_detail d-flex flex-column justify-content-around">
+		 	   									 <p class="title font-weight-bold">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</p>
+		 	   									 <p class="contant">从联合调查组获悉，权健自然医学科技发展有限公司实际控制人束某某等18名犯罪嫌疑人已被依法刑事拘留。2019年1月1日，天津市公安机关对权健自然医学科技发展有限公司涉嫌组织哈哈</p>
+		 	   								</div>
+		 	   						</div>
+		 	   			 
+		 	   		</div>
+		 	   </div>
+		 	   
+		 </div>
+		 
+		<!--尾部footer-->
+		<div class="footer_top">
+    		<div class="container warp_box d-flex justify-content-between align-items-center">
+    				<div class="row col-md-12 col-lg-12 d-flex justify-content-between align-items-center">
+    						<div class="d-flex justify-content-between align-items-center">
+    							  <i class="iconfont icon-diamond"></i>
+    							  <p>高端品质</p>
+    						</div>
+    						<div class="d-flex justify-content-between align-items-center">
+    							  <i class="iconfont icon-fuwuzhongjiewuye"></i>
+    							  <p>优质服务</p>
+    						</div>
+    						<div class="d-flex justify-content-between align-items-center">
+    							  <i class="iconfont icon-zhuanzhu-copy"></i>
+    							  <p>精心专注</p>
+    						</div>
+    						<div class="d-flex justify-content-between align-items-center">
+    							  <i class="iconfont icon-qian4"></i>
+    							  <p>高端品质</p>
+    						</div>
+    				</div>
+    		</div>
+    		<!--底部说明选项列表-->
+    		<div class="container warp_bottom">
+    			 <div class="row server_list">
+    			 	  <div class="col-md-6 d-flex justify-content-between">
+    			 	  	 <ul>
+    			 	  	 	  <li><a href="">个人中心</a></li>
+    			 	  	 	  <li><a href="">我的订单</a></li>
+				 	  	 	  	<li><a href="">维修评价</a></li>
+				 	  	 	  	<li><a href="">服务评价</a></li>
+    			 	  	 </ul>
+    			 	  	 
+    			 	  	 <ul>
+    			 	  	 	  <li><a href="">关于我们</a></li>
+    			 	  	 	  <li><a href="">发展历程</a></li>
+    			 	  	 	  <li><a href="">文化理念</a></li>
+    			 	  	 	  <li><a href="">服务介绍</a></li>
+    			 	  	 </ul>
+    			 	  	 
+    			 	  	 <ul>
+    			 	  	 	  <li><a href="">联系我们</a></li>
+    			 	  	 	  <li><a href="">市场合作</a></li>
+    			 	  	 	  <li><a href="">企业客户</a></li>
+    			 	  	 </ul>
+    			 	  </div>
+    			 	  
+    			 	  <div class="col-md-2 offset-md-4 Qr d-flex justify-content-around flex-column">
+    			 	  		<p class="text-center" style="font-size: 1rem;color:#ffffff;">欢饮关注环球万家</p>
+    			 	  		<div>
+    			 	  			 <img src="../../home/img/erwei.png" class=""/>
+    			 	  		</div>
+    			 	  </div>
+    			 </div>
+    		</div>
+   </div>
+    <!--底部样式底部-->
+    <div class="footer_bottom">
+    	  <div class="container">
+    	  	<div class="row col-md-12 justify-content-start flex-column" style="padding-top: 1.25rem;padding-bottom: 1.25rem;">
+    	  		<small>服务热线4008 020 666(周一至周日9:00~21:00)</small>
+    	  		<small>CopyRight &copy; 2014-2017, All Rights Reserved 版权所有 车享 沪ICP备14000481号</small>
+    	  	</div>
+    	  </div>
+    </div>
+		
+		<!--脚本-->
+		<script>
+				$(function(){
+						//判断导航
+            var pathname = window.location.pathname
+            var nav_one = '/' + $('.index_cor').attr('href')
+            if(pathname == nav_one){
+            	$(".index_cor").css("color","#29CC5F");
+            }
+						//解决手机端无法使用手势滑动图片
+						//banner轮播
+					 	var myTouch = util.toucher(document.getElementById('demo'));
+			          myTouch.on('swipeLeft',function(e){
+			              $('.carousel-control-next').click();
+			        	 }).on('swipeRight',function(e){
+			              $('.carousel-control-prev').click();
+			          });
+		        
+		        //联合创始人轮播
+//	         	var myTouch1 = util.toucher(document.getElementById('demo2'));
+//		          myTouch1.on('swipeLeft',function(e){
+//		              $('.carousel-control-next').click();
+//		        	 }).on('swipeRight',function(e){
+//		              $('.carousel-control-prev').click();
+//		          });
+		          
+		    });      
+		          
+			
+		</script>
+</body>
+</html>
