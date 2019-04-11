@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.css"/>
+	  <!--order.css-->
+	  <link rel="stylesheet" type="text/css" href="css/order.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
+	  <!--尾部css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/footer.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
+	  <!--layUI.css-->
+	  <!--<link rel="stylesheet" type="text/css" href="dist/layui/css/layui.css"/>-->
+	  <!--jquery-->
+	  <script src="js/jquery-3.3.1.min.js"></script>
+	   <!--复用导航.js-->
+	  <script src="repeat/js/repeat.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--layUI.js-->
+	  <script src="dist/layui/layui.js"></script>
+    <title>填写工单</title>
+ 
+	</head>
+<body>
+		 <!--插入导航-->
+		<div class="first_div"></div>
+     <!--页面容器-->
+     <div class="container body_box">
+     	<!--标题-->
+     	 <div class="row top_box">
+     	 	<div class="col-12 d-flex align-items-center justify-content-start">
+     	 		<i class="iconfont icon-tubiaozhizuo-" style="font-weight: bold;font-size: 1.4rem;color:#1F8C44;"></i><p style="display: inline-block;margin-top: 1rem;">填写工单</p>
+     	 	</div>
+     	 </div>
+     	 <!--用户输入表单-->
+     	 <div class="row userdetail">
+     	 	 		<div class="col-12">
+     	 	 			<form>
+     	 	 				<!--门店名--必填-->
+						    <div class="form-group form-inline form_one">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="dian-name" class="sin_l">预约门店:</label>
+						    	</div>
+							    <div class="col-12 col-md-3">
+							      <select name="" class="form-control" style="width: 100%">
+							      		<option value="">四川金堂店</option>
+							      		<option value="">四川高新店</option>
+							      		<option value="">四川武侯店</option>
+							      </select>
+							    </div>
+						    </div>
+						    <!--输入姓名--必填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="username" class="sin_l">送修人姓名:</label>
+						      </div>
+						      <div class="col-12 col-md-3">
+						      	<input type="text" class="form-control" id="username" placeholder="请输入您的姓名">
+						      </div>
+						    </div>
+						    <!--联系电话--必填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="phone" class="sin_l">联系电话:</label>
+						    	</div>
+						      
+						      <div class="col-12 col-md-3">
+						      	<input type="number" class="form-control" id="phone" placeholder="请输入您的联系电话">
+						      </div>
+						    </div>
+						    <!--车辆款式--选填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="styles" class="sin_l">车辆款式:</label>
+						      </div>
+						      <div class="col-12 col-md-6">
+						     		 <input type="text" class="form-control" id="styles" placeholder="请输入您的车辆款式:    例:2019款宝马 X5">
+						      </div>
+						    </div>
+						    <!--车牌号--必填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="carid" class="sin_l">车牌号:</label>
+						      </div>
+						      <div class="col-12 col-md-3">
+						      	<input type="text" class="form-control" id="carid" placeholder="请输入您的车牌号">
+						      </div>
+						    </div>
+						    <!--车架号--选填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="carnum" class="sin_l">车架号:</label>
+						      </div>
+						      <div class="col-12 col-md-3">
+						     		 <input type="text" class="form-control" id="carnum" placeholder="请输入您的车架号">
+						      </div>
+						      <span>注:若为未上牌的新车,请在此输入车架号</span>
+						    </div>
+						    <!--消费类型 复选框--选填-->
+						    <div class="form-group form-inline">
+						    <!--标题-->
+						      <div class="col-12 col-md-3 title">
+						      	<label for="carnum" class="sin_l">服务类型:</label>
+						      </div>
+						      <!--复选框-->
+						      <div class="col-12 col-md-4">
+						     		<div class="RadioStyle">
+									    <div class="Block PaddingL d-flex align-items-center justify-content-between">
+									        <input type="checkbox" id="love1" />
+									        <label for="love1" class="d-flex justify-content-center">汽车</label>
+									        <input type="checkbox" id="love2" />
+									        <label for="love2" class="d-flex justify-content-center">养护</label>
+									        <input type="checkbox" id="love3" />
+									        <label for="love3" class="d-flex justify-content-center">维修</label>
+									    </div>
+										</div>
+						      </div>
+						    </div>
+						    <!--问题描述-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="uservalue" class="sin_l">问题描述:</label>
+						      </div>
+						      <div class="col-12 col-md-6">
+						      	<textarea id="uservalue" name="" rows="5" cols="" class="form-control" placeholder="请输入您的车辆问题!" style="width: 100%;"></textarea>
+						     	</div>
+						    </div>
+						    <!--提交按钮-->
+						    <div class="col-12 d-flex justify-content-center">
+						    	<button type="submit" class="btn btn-success" id="send">提交订单</button>
+						    </div>
+   						 
+  						</form>
+     	 	 		</div>
+     	 	 </div>
+     </div>
+			
+		<!--尾部插入footer-->
+		<div class="last_div"></div>
+		<!--脚本-->
+		<script type="text/javascript">
+			$(function(){
+				 var chec_list = Array.from($('.RadioStyle label'))
+				 		chec_list.forEach(function(value,index){
+				 					var flag = true;
+				 					chec_list[index].onclick = function(){
+				 						if(flag == true){
+					 							this.style.border = '1px solid #33A55A';
+					 			 	  		flag = false;
+				 						}else if(flag == false){
+				 							  this.style.border = '1px solid #cccccc';
+				 							  flag = true
+				 						}
+				 			 	  
+				 			}
+				 			 
+				 		})
+				 
+			})
+		</script>
+</body>
+</html>

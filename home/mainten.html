@@ -100,7 +100,7 @@
 				 	 </div>
 				 	  <div class="col-md-4 col-12 list_dian">
 				 	 	 <ul>
-				 	 	 	  <li style="background:#e3e3e3;">
+				 	 	 	  <li style="background:#e3e3e3;",>
 				 	 	 	  	 <p class="title">四川金堂店</p>
 				 	 	 	  	 <div>
 				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
@@ -108,21 +108,21 @@
 				 	 	 	  	 </div>
 				 	 	 	  </li>
 				 	 	 	   <li style="background:#f3f3f3;">
-				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <p class="title">四川高新店</p>
 				 	 	 	  	 <div>
 				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
 				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
 				 	 	 	  	 </div>
 				 	 	 	  </li>
 				 	 	 	  <li style="background:#e3e3e3;">
-				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <p class="title">四川武侯店</p>
 				 	 	 	  	 <div>
 				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
 				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
 				 	 	 	  	 </div>
 				 	 	 	  </li>
 				 	 	 	  <li style="background:#ef3f3f3;">
-				 	 	 	  	 <p class="title">四川金堂店</p>
+				 	 	 	  	 <p class="title">四川锦江店</p>
 				 	 	 	  	 <div>
 				 	 	 	  	 	 <p class="server">服务热线:6546165</p>
 				 	 	 	  	 	 <p class="address">四川省成都市金堂县文达路416号环球万家金堂店</p>
@@ -145,13 +145,31 @@
 //				选择一个中心点
 				map.centerAndZoom(point, 15); 
 				// 地图平移缩放控件
-            map.addControl(new BMap.NavigationControl());
-            // 比例尺控件
-            map.addControl(new BMap.ScaleControl());
-            // 缩略图控件    
-			map.addControl(new BMap.OverviewMapControl());
-			// 地图类型控件    
-			map.addControl(new BMap.MapTypeControl());  
+        map.addControl(new BMap.NavigationControl());
+        // 比例尺控件
+        map.addControl(new BMap.ScaleControl());
+        // 缩略图控件    
+				map.addControl(new BMap.OverviewMapControl());
+				// 地图类型控件    
+				map.addControl(new BMap.MapTypeControl());  
+				
+				
+//				跳转至工单
+//        方式一-直接选择我要修车
+          $('#xiucar').on('click',function(){
+          	 window.open('order.html')
+          })
+//				方式二-下拉框选择
+//        方式三-门店列表选择
+          var list_dian = Array.from($('.list_dian ul li .title'))
+					list_dian.forEach(function(value,index){
+						  list_dian[index].onclick = function(){
+//						  	门店名字传递
+								var dian_name = encodeURIComponent(this.innerText.toString())
+						  	window.open('order.html?name=' + encodeURIComponent(dian_name))
+						  }
+					})
+					
 		</script>
 </body>
 </html>

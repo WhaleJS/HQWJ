@@ -57,6 +57,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-left: 0px!important;
+		margin-top: 1rem;
 	}
 	.navbar .container #collapsibleNavbar .loginBox a{
 		display: block;

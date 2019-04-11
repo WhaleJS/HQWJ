@@ -1,5 +1,9 @@
 
-
+/*超大屏幕*/
+.jumbotron{
+	background: #000000;
+	border-radius:0!important;
+}
 
 /*轮播图li下标颜色*/
 .carousel-indicators .active{
@@ -7,49 +11,20 @@
 }
 /*页面容器*/
 .body_box{
-	background: #ffffff;
 	overflow: hidden;
+	background: #ffffff;
 }
 /*公用标题样式*/
-.col-md-4 h4{
-	background: yellow;
-	font-weight: bold;
-}
-/*主营业务*/
-.index_top{
-	border: 1px solid black;
-	margin-top:4rem;
-	/*overflow: hidden;*/
-}
-
-.index_top .tab_box{
-	padding-top: 2.5rem;
-	
-}
-
-.index_top .tab_box .tab_img{
-	width: 13.37rem;
-	height: 10rem;
-	background: #ffffff;
-	margin-bottom: 1.87rem;
-	cursor: pointer;
-}
-.index_top .tab_box .tab_img img{
-	transition: all .8s ease;
-}
-.index_top .tab_box .tab_img img:hover{
-	transform:rotate(360deg);
-	-ms-transform:rotate(360deg); 	/* IE 9 */
-	-moz-transform:rotate(360deg); 	/* Firefox */
-	-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
-}
-.index_top .tab_box .tab_img small{
+.col-md-5 h4{
+	/*background: yellow;*/
 	color: #333333;
+	font-weight: bold;
+	line-height: 1.4;
 }
 
-/*创始人*/
+
+/*服务明星*/
 .index_middle{
-	border: 1px solid black;
 	margin-top: 4.37rem;
 }
 .index_middle .col-md-10{
@@ -58,145 +33,251 @@
 
 /*团队风采*/
 .index_bottom{
-	border: 1px solid black;
 	margin-top:4.37rem;
 }
 /*团队风采-->明星列表*/
 .index_bottom .start_list{
-	border: 1px solid #000066;
 	margin-top:2.5rem;
-	background-image: url(../img/xian.png);
+	/*background-image: url(../img/xian.png);
 	background-repeat:no-repeat;
-	background-position:bottom center;
-	/*background-size:contain;*/
+	background-position:7% 0%;*/
 }
 
 .index_bottom .start_list .col-md-3{
-	height: 25.12rem;
 	background:#ffffff;
 	margin: 4rem 0 4rem 0;
 	box-shadow: 0px 10px 15px #cccccc;
-	background-image:url(../img/top_title.png);
-	background-repeat:no-repeat;
-	background-position:5% 0%;
 }
+/*明星图片*/
 .index_bottom .start_list .col-md-3 #start_img{
-	width: 10rem;
-	height: 10rem;
-	border-radius: 50%;
-	border: 2px solid #28D964;
+	width: 100%;
+	height: 70%;
+	position: relative;
+	overflow: hidden;
+	/*box-shadow: 0px 10px 15px #cccccc;*/
 }
+.index_bottom .start_list .col-md-3 #start_img .img-fluid{
+	width: 100%;
+	transition: all .5s ease;
+}
+.index_bottom .start_list .col-md-3 #start_img .img-fluid:hover{
+	transform: scale(1.1);
+}
+/*明星名字*/
 .index_bottom .start_list .col-md-3 #start_name{
-	color: red;
-	margin-bottom: 0!important;
+	color:#33A55A;
+	font-weight: bold;
+	margin-bottom:1rem;
+	margin-top: 1rem;
+}
+/*明星类型*/
+.index_bottom .start_list .col-md-3 #start_detail{
+	margin-bottom: 1rem;
 }
 .index_bottom .start_list .col-md-3 .start_num{
 	width: 70%;
+	margin-bottom: 1rem;
 }
 
-/*最新要闻*/
-.index_news{
-	border: 1px solid black;
-	margin-top:4.37rem;
-	margin-bottom: 3rem;
-}
-.index_news .news_box{
-	border: 1px solid blue;
+/*维修精英列表--图片*/
+.index_middle .w_list{
 	margin-top: 2.5rem;
 }
-/*新闻选项列表左*/
-.index_news .news_box .tab_list{
-	width: 61%;
-	border: 1px solid darkcyan;
-}
-.index_news .news_box .tab_list .more{
-	width: 100%;
-	text-align: center;
-	color: #666666;
-	font-size: 0.87rem;
-	border: 1px solid black;
-	cursor: pointer;
-}
-.index_news .news_box .tab_list ul{
-	width: 100%;
-	border: 1px solid red;
-}
-.index_news .news_box .tab_list ul li{
-	width: 100%;
-	transition: all .3s ease;
-}
-.index_news .news_box .tab_list ul li:hover{
-	box-shadow: 0px 4px 10px #b3b3b3;
-}
-.index_news .news_box .tab_list ul li:first-child{
-	margin-top: 0.93rem;
-	margin-bottom: 0.93rem;
-}
-.index_news .news_box .tab_list ul li .tab_img{
-	width: 25%;
-}
-
-.index_news .news_box .tab_list ul li .tab_detail{
-	width: 75%;
-}
-.index_news .news_box .tab_list ul li .tab_detail .title{
-	width: 85%;
-	margin: 0 auto;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	white-space: nowrap;
-	transition: all .4s ease;
-}
-.index_news .news_box .tab_list ul li .tab_detail .title:hover{
-	color: #00ace6;
-}
-.index_news .news_box .tab_list ul li .tab_detail .contant{
-	width: 85%;
-	margin: 0 auto;
-	color: #999999;
-	font-size: 0.87rem;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
-	overflow: hidden;
-}
-.index_news .news_box .tab_list ul li .tab_detail .date{
-	width: 85%;
-	margin: 0 auto;
-	color: #999999;
-	font-size: 0.87rem;
-
-}
-/*新闻列表右边*/
-.index_news .news_box .news_list{
-	width: 36%;
-	border: 1px solid seagreen;
-}
-
-.index_news .news_box .news_list .title{
-	width: 85%;
-	height: 15%;
-	margin-top: 0.93rem;
-}
-
-.index_news .news_box .news_list ul{
-	width: 85%;
-	height:90%;
-	margin-top: 0.62rem;
-}
-.index_news .news_box .news_list ul li{
-	margin-top: 0.62rem;
-}
-.index_news .news_box .news_list ul li p{
-	font-size: 1rem;
-	width: 80%;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	white-space: nowrap;
+.index_middle .w_list p{
 	margin-bottom: 0;
-	transition: all .4s ease;
 }
-.index_news .news_box .news_list ul li p:hover{
-	color: #00ace6;
-	text-decoration: underline;
+.index_middle .w_list .w_img{
+	position: relative;
+	 display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
 }
+.index_middle .w_list .w_img .j_top,.j_bottom{
+	position: absolute;
+}
+.index_middle .w_list .w_img .j_top{
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+.index_middle .w_list .w_img .j_bottom{
+	right: 0;
+	bottom: 0;
+	z-index: 105;
+}
+.index_middle .w_list .w_img .j_peo{
+	position: relative;
+	z-index: 101;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.index_middle .w_list .w_detail{
+}
+/*维修精英列表--精英简介*/
+.index_middle .w_list .w_detail .w_name{
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: #33A55A;
+}
+.index_middle .w_list .w_detail .w_rank{
+	font-size:1.75rem;
+	padding-right: 1.25rem;
+	font-weight: bold;
+	color: #E4E4E4;
+	text-align: right;
+}
+.index_middle .w_list .w_detail .years{
+	font-size: 0.87rem;
+	color: #666666;
+	margin-bottom: .5rem;
+}
+.index_middle .w_list .w_detail .address{
+	margin-bottom: .5rem;
+}
+
+.index_middle .w_list .w_detail .address p{
+	font-size: 0.87rem;
+	color: #666666;
+}
+.index_middle .w_list .w_detail .paper{
+	font-size: 0.87rem;
+	color: #333333;
+}
+
+/*优秀门店*/
+.index_middle .y_detail{
+/*	padding-bottom: 5rem;*/
+}
+.index_middle .y_detail .y_img{
+	position: relative;
+}
+.index_middle .y_detail .y_img .img-fluid{
+	width: 100%;
+}
+.index_middle .y_detail .y_img .num_k{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3.75rem;
+	height: 3.75rem;
+	line-height: 3.75rem;
+	font-size: 0.87rem;
+	font-weight: bold;
+	text-align: center;
+	background: #2a884a;
+	color: #ffffff;
+}
+/*店铺简介*/
+.index_middle .y_detail .y_paper{
+	background: #33A55A;
+	
+}
+.index_middle .y_detail .y_paper .d_name{
+	font-size: 1.5rem;
+	color: #ffffff;
+	margin-top: 4.25rem;
+}
+.index_middle .y_detail .y_paper .rank{
+	margin-bottom: 3rem;
+}
+.index_middle .y_detail .y_paper .paper{
+	font-size: 0.87rem;
+	color: #ffffff;
+}
+.index_middle .y_detail .y_paper .address{
+	font-size: 0.87rem;
+	color: #ffffff;
+}
+
+
+/*标题背景图*/
+.body_box .f_start{
+	background:url(../img/f_strat.png)no-repeat center top;
+}
+.body_box .w_start{
+	background:url(../img/f_strat.png)no-repeat center top;
+}
+.body_box .y_start{
+	background:url(../img/f_strat.png)no-repeat center top;
+}
+/*媒体查询*/
+@media only screen and (min-width:768px) {
+	.body_box{
+		overflow: hidden;
+		position: relative;
+		background: #ffffff;
+		top: -4.2rem;
+		z-index: 999;
+	}
+	.index_bottom .start_list .col-md-3{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.index_middle .w_list .col-md-5{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.index_middle .w_list .w_detail .paper{
+		padding-bottom: 3rem;
+	}
+	.index_middle .y_detail .y_img{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+@media only screen and (max-width:1200px) {
+	.index_middle .y_detail{
+		width: 100%;
+	}
+	.index_middle .y_detail .y_paper{
+		/*background: #33A55A;
+		margin-left: 15px;
+		margin-right: 15px;*/
+	    width: 100%;
+	}
+}
+@media only screen and (max-width:768px) {
+	.col-md-5 h4{
+		color: #333333;
+		font-weight: bold;
+		line-height: 1.6;
+	}
+	.index_middle .w_list{
+		margin-top: 1rem;
+	}
+	.index_middle .w_list .w_img .j_peo{
+		position: relative;
+		z-index: 101;
+		margin-top:1.58rem;
+		margin-bottom:1.58rem;
+	}
+	.index_middle .w_list .w_detail .paper{
+		padding-bottom: 1rem;
+	}
+	.index_middle .w_list .w_detail .w_name{
+		margin-top: 1rem;
+	}
+	.index_middle .y_detail .y_img .num_k{
+		right: 15px;
+	}
+	.index_middle .y_detail .y_paper .d_name{
+		font-size: 1.5rem;
+		color: #ffffff;
+		margin-top: 2rem;
+}
+	.index_middle .y_detail .y_paper .rank{
+		margin-bottom: 1rem;
+	}
+}
+@media only screen and (max-width:576px) {
+	.index_middle .y_detail .y_paper{
+		background: #33A55A;
+		margin-left: 15px;
+		margin-right: 15px;
+	
+	}
+}
+	
+	

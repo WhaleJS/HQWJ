@@ -3,6 +3,7 @@ body{
 }
 .jumbotron{
 	background:#000000!important;
+	border-radius:0!important;
 }
 /*我要修车/取车*/
 .btn_box{

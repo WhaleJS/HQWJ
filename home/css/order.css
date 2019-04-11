@@ -1,0 +1,112 @@
+body{
+}
+.body_box{
+	background: #ffffff;
+}
+.body_box .top_box{
+	border-bottom: 1px solid #e2e2e2;
+	
+}
+
+/*用户输入表单*/
+input::-webkit-input-placeholder{
+	font-size: 0.87rem;
+}
+.col-md-6 textarea{
+	resize: none;
+}
+.col-md-6 textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size:0.87rem;
+}
+.col-md-6 textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size:0.87rem;
+}
+.col-md-6 textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size:0.87rem;
+}
+.col-md-6 textarea::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size:0.87rem;
+ 
+}
+.userdetail .form-group input{
+	width: 100%;
+}
+
+.userdetail .form_one{
+	margin-top: 3rem;
+}
+.userdetail .form-group{
+	margin-bottom: 2.18rem;
+}
+.userdetail .form-group select{
+	font-size: 0.87rem;
+}
+.userdetail .form-group .sin_l{
+	font-size: 0.87rem;
+	color: #333333;
+}
+.userdetail .form-group span{
+	font-size: 0.75rem;
+	color: #999999;
+}
+
+.userdetail form button{
+	width: 20%;
+	margin-top:1rem;
+	margin-bottom:2.5rem;
+}
+/*复选框*/
+.RadioStyle input {
+	display: none
+}
+.RadioStyle label {
+	border: 1px solid #cccccc;
+	padding: 2px 10px 2px 5px;
+	line-height: 28px;
+	min-width: 80px;
+	text-align: center;
+	float: left;
+	margin: 2px;
+	color: #666666;
+	font-size: 0.75rem;
+	border-radius: 4px
+}
+.RadioStyle input:checked + label {
+	background: url(../img/ico_checkon.svg) no-repeat right bottom;
+	background-size: 21px 21px;
+	color: #33A55A;
+}
+	
+/*媒体查询*/
+@media only screen and (min-width:768px){
+	.userdetail .form-group label{
+		display: flex;
+		justify-content: flex-end;
+	}
+	.userdetail .form-group .title{
+		margin-left: 30px;
+	}
+	/*复选框*/
+
+}
+@media only screen and (max-width:576px) {
+	.userdetail .form-group{
+		margin-bottom: 1.5rem;
+	}
+
+	.userdetail .form-group span{
+		margin-left: 15px;
+		margin-top: 1rem;
+	}
+	.userdetail form button{
+		width: 35%;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+	}
+	/*复选框*/
+
+}

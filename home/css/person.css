@@ -1,0 +1,105 @@
+
+/*页面容器*/
+.body_box{
+	overflow: hidden;
+	height: 600px;
+	margin-top: 2rem;
+}
+a{
+	color:#333333;
+}
+/*个人中心选项卡*/
+.body_box .left_nav{
+	background:#ffffff;
+}
+.body_box .left_nav .nav{
+	width: 100%
+}
+.body_box .left_nav .nav li{
+	width: 42%;
+}
+
+.body_box .left_nav .nav li i{
+	color: #333333;
+}
+.body_box .left_nav .nav-tabs .nav-link {
+     /*border:0; 
+     border-top-left-radius:0; 
+     border-top-right-radius:0; 
+     display: block;*/
+}
+.body_box .left_nav .nav li:hover i{
+	color:#33A55A;
+}
+.body_box .left_nav .nav-tabs .nav-link:hover{
+	color:#33A55A;
+}
+
+/*订单未读个数*/
+.body_box .left_nav .nav .or_li{
+	position:relative
+}
+.body_box .left_nav .nav .or_li .order_num{
+	width: 0.93rem;
+	height: 0.93rem;
+	border-radius: 50%;
+	background:#FE6F83;
+	text-align: center;
+	font-size: 0.75rem;
+	line-height: 1;
+	color: white;
+	position: absolute;
+	right: 0;
+}
+/*选项卡--会员中心*/
+.body_box #me_center{
+	height: 300px;
+	background:darkgoldenrod;
+}
+/*会员信息*/
+#me_center .me_detail{
+	width: 100%;
+	height: 150px;
+	background: darkcyan;
+}
+/*-----------------------------*/
+
+
+/*选项卡--会员资料*/
+.body_box #me_data{
+	height: 300px;
+	background:darkblue;
+}
+/*-----------------------------*/
+
+/*选项卡--我的订单*/
+.body_box #me_order{
+	height: 300px;
+	background:blueviolet;
+}
+/*-----------------------------*/
+
+/*选项卡--会员充值*/
+.body_box #me_pay{
+	height: 300px;
+	background:#00B83F;
+}
+
+.body_box .right_box .tab-pane{
+	color: #ffffff;
+}
+/*媒体查询*/
+@media only screen and (min-width:768px) {
+	.body_box .left_nav{
+		width: 25%;
+		float: left;
+	}
+	.body_box .right_box{
+		width: 73%;
+		float: right;
+	}
+	.body_box .left_nav .nav li{
+		margin-bottom: 1rem;
+	}
+}
+	

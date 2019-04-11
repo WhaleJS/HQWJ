@@ -1,9 +1,92 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.css"/>
+	  <!--index.css-->
+	  <link rel="stylesheet" type="text/css" href="css/person.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
+	  <!--尾部css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/footer.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
+	  <!--jquery-->
+	  <script src="js/jquery-3.3.1.min.js"></script>
+	   <!--复用导航.js-->
+	  <script src="repeat/js/repeat.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--轮播图无法使用手势滑动-->
+	  <script src="repeat/js/toucher.js"></script>
+      <title>个人中心</title>
 	</head>
-	<body>
-	</body>
+<body>
+	   <!--插入导航-->
+		<div class="first_div"></div>
+		
+		<!--页面容器-->
+		<div class="container body_box">
+			
+			<!--个人中心选项卡-->
+			<div class="left_nav">
+			   <ul class="nav nav-tabs d-flex flex-column justify-content-center">
+			    <li class="nav-item mx-auto" style="border-bottom: 1px solid #cccccc;text-align: center;width: 80%;margin-bottom: .5rem;">
+			      <a class="nav-link active" href="#me_center" data-toggle="tab" style="color: #33A55A;border-top-left-radius: 0;border-top-right-radius:0;border:none">会员中心</a>
+			    </li>
+			    <li class="nav-item d-flex align-items-center justify-content-around mx-auto">
+			      <i class="iconfont">&#xe637;</i>
+			      <a class="nav-link" href="#me_data" data-toggle="tab">会员资料</a>
+			    </li>
+			    <li class="nav-item d-flex align-items-center justify-content-around mx-auto or_li">
+			      <i class="iconfont">&#xe723;</i>
+			      <a class="nav-link" href="#me_order" data-toggle="tab">我的订单</a>
+			      <div class="order_num">1</div>
+			    </li>
+			    <li class="nav-item d-flex align-items-center justify-content-around mx-auto">
+			      <i class="iconfont">&#xe665;</i>	
+			      <a class="nav-link" href="#me_pay" data-toggle="tab">会员充值</a>
+			    </li>
+	  			</ul>
+			</div>
+			
+			<!--选项卡详情-->
+			<div class="right_box tab-content">
+				<!--会员中心-->
+				 <div id="me_center" class="tab-pane fade show active">
+				 	<!--会员个人信息-->
+				 	<div class="me_detail">
+				 		
+				 	</div>
+				 </div>
+				<!--会员资料-->
+				 <div id="me_data" class="tab-pane fade">
+					会员资料
+				 </div>
+				<!--我的订单-->
+				 <div id="me_order" class="tab-pane fade">
+					我的订单
+				 </div>
+				<!--会员充值-->
+				 <div id="me_pay" class="tab-pane fade">
+					会员充值
+				 </div>
+			</div>
+			
+				
+			
+		</div>
+		 	   
+		<!--尾部插入footer-->
+		<div class="last_div"></div>
+</body>
 </html>
