@@ -22,12 +22,7 @@ a{
 .body_box .left_nav .nav li i{
 	color: #333333;
 }
-.body_box .left_nav .nav-tabs .nav-link {
-     /*border:0; 
-     border-top-left-radius:0; 
-     border-top-right-radius:0; 
-     display: block;*/
-}
+
 .body_box .left_nav .nav li:hover i{
 	color:#33A55A;
 }
@@ -59,8 +54,46 @@ a{
 /*会员信息*/
 #me_center .me_detail{
 	width: 100%;
-	height: 150px;
 	background: darkcyan;
+}
+
+/*会员信息--图片上传*/
+#me_center .me_detail .detail_img{
+	width: 6.25rem;
+	height: 6.25rem;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid #33A55A;
+}
+#me_center .me_detail .detail_img img{
+	width: 100%;
+	height: 100%;
+}
+/*会员的信息--等级，余额盒子*/
+#me_center .me_detail .detail_paper{
+	width:80%;
+	border: 1px solid #33A55A;
+	padding:.5rem 0 .5rem 0;
+}
+/*top*/
+#me_center .me_detail .detail_paper .paper_top{
+	background: darkgoldenrod;
+}
+/*号码*/
+#me_center .me_detail .detail_paper .paper_top .users{
+	background: darkgreen;
+}
+/*等级*/
+#me_center .me_detail .detail_paper .paper_top .levels{
+	background:darkmagenta;
+}
+
+
+/*分红余额*/
+#me_center .me_detail .detail_paper .paper_bottom{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 /*-----------------------------*/
 
@@ -89,7 +122,8 @@ a{
 	color: #ffffff;
 }
 /*媒体查询*/
-@media only screen and (min-width:768px) {
+/*桌面端*/
+@media only screen and (min-width:998px) {
 	.body_box .left_nav{
 		width: 25%;
 		float: left;
@@ -101,5 +135,181 @@ a{
 	.body_box .left_nav .nav li{
 		margin-bottom: 1rem;
 	}
+
+	/*个人中心-top号码*/
+
+	#me_center .me_detail .detail_paper{
+		width:80%;
+		border: 1px solid #33A55A;
+		padding:1.5rem 0 1.5rem 0;
+	}
+	#me_center .me_detail .detail_paper .paper_top{
+		width: 100%;
+		background: darkgoldenrod;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	/*号码*/
+	#me_center .me_detail .detail_paper .paper_top .users{
+		width: 36%;
+		background: darkgreen;
+	}
+	/*等级*/
+	#me_center .me_detail .detail_paper .paper_top .levels{
+		width: 40%;
+		background:darkmagenta;
+	}
+	/*个人中心bottom分红*/
+	#me_center .me_detail .detail_paper .paper_bottom{
+		background: darkolivegreen;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding-bottom: 1rem;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom div{
+		width: 32%;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .c_money{
+		background: red;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
+		width: 23%;
+		background:yellow;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
+		width: 23%;
+		background: green;
+	}
+	
+}
+
+/*适配平板*/
+@media only screen and (max-width:998px) {
+	#me_center .me_detail .detail_img{
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+	}
+	#me_center .me_detail .detail_paper .paper_top{
+		background: darkgoldenrod;
+		display: flex;
+		align-items: center;
+		/*flex-direction: column;*/
+		justify-content: space-around;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		background: royalblue;
+		
+	}
+	#me_center .me_detail .detail_paper .paper_top .users{
+		background: darkgreen;
+		margin-bottom: .5rem;
+	}
+	#me_center .me_detail{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+	#me_center .me_detail .detail_paper .paper_top .users{
+		width: 33%;
+		display: flex;
+		justify-content: flex-start;
+		background: darkgreen;
+	}
+	/*等级*/
+	#me_center .me_detail .detail_paper .paper_top .levels{
+		width: 33%;
+		background:darkmagenta;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .c_money{
+		width: 33%;
+		background: red;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
+		width: 33%;
+		background:yellow;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
+		width: 33%;
+		background: green;
+		justify-content: flex-start;
+	}
+	
+	
+}
+
+/*适配手机*/
+@media only screen and (max-width:768px) {
+	#me_center .me_detail .detail_img{
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+	}
+	#me_center .me_detail .detail_paper .paper_top{
+		background: darkgoldenrod;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		background: royalblue;
+		
+	}
+	#me_center .me_detail .detail_paper .paper_top .users{
+		background: darkgreen;
+		margin-bottom: .5rem;
+	}
+	#me_center .me_detail{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+	#me_center .me_detail .detail_paper .paper_top .users{
+		width: 50%;
+		display: flex;
+		justify-content: flex-start;
+		background: darkgreen;
+	}
+	/*等级*/
+	#me_center .me_detail .detail_paper .paper_top .levels{
+		width: 50%;
+		background:darkmagenta;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .c_money{
+		width: 50%;
+		background: red;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
+		width: 50%;
+		background:yellow;
+		justify-content: flex-start;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
+		width: 50%;
+		background: green;
+		justify-content: flex-start;
+	}
+	
+	
 }
 	
