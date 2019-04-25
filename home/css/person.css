@@ -1,8 +1,7 @@
-
 /*页面容器*/
 .body_box{
 	overflow: hidden;
-	height: 600px;
+	/*height: 600px;*/
 	margin-top: 2rem;
 }
 a{
@@ -29,7 +28,11 @@ a{
 .body_box .left_nav .nav-tabs .nav-link:hover{
 	color:#33A55A;
 }
-
+.nav-tabs .nav-link {
+    border:none;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
 /*订单未读个数*/
 .body_box .left_nav .nav .or_li{
 	position:relative
@@ -48,13 +51,11 @@ a{
 }
 /*选项卡--会员中心*/
 .body_box #me_center{
-	height: 300px;
-	background:darkgoldenrod;
 }
 /*会员信息*/
 #me_center .me_detail{
 	width: 100%;
-	background: darkcyan;
+	background:#ffffff;
 }
 
 /*会员信息--图片上传*/
@@ -62,67 +63,259 @@ a{
 	width: 6.25rem;
 	height: 6.25rem;
 	overflow: hidden;
+	border: 2px solid #33A55A;
 	border-radius: 50%;
-	border: 1px solid #33A55A;
 }
 #me_center .me_detail .detail_img img{
-	width: 100%;
-	height: 100%;
+	/*width: 100%;
+	height: 100%;*/
 }
 /*会员的信息--等级，余额盒子*/
 #me_center .me_detail .detail_paper{
 	width:80%;
-	border: 1px solid #33A55A;
 	padding:.5rem 0 .5rem 0;
 }
 /*top*/
-#me_center .me_detail .detail_paper .paper_top{
-	background: darkgoldenrod;
+
+#me_center .me_detail .detail_paper .paper_top div p{
+	padding-left: 10px;
 }
-/*号码*/
-#me_center .me_detail .detail_paper .paper_top .users{
-	background: darkgreen;
-}
-/*等级*/
-#me_center .me_detail .detail_paper .paper_top .levels{
-	background:darkmagenta;
+#me_center .me_detail .detail_paper .paper_bottom div p{
+	padding-left: 10px;
 }
 
 
 /*分红余额*/
 #me_center .me_detail .detail_paper .paper_bottom{
 	display: flex;
-	align-items: center;
-	justify-content: space-around;
+}
+/*表格盒子*/
+#me_center .table_box{
+	margin-top:.6rem;
+	color: black;
+	background: #ffffff;
+}
+/*搜索框*/
+.table_box .serch{
+	background: #ffffff!important;
+	border-bottom: 1px solid #ccc;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.table_box .serch .input-group-prepend button{
+	border-top-right-radius:.2rem;
+	border-bottom-right-radius:.2rem;
+	border: 1px solid #ccc;
+}
+.serch .input-group{
+	margin-top: .3rem;
+	margin-bottom: .3rem!important;
+}
+/*订单数量详情*/
+.table_box .order_num{
+	height: 50px;
+	background:#E9FFF1;
+	margin-bottom: 10px;
+	margin-top: .4rem;
+}
+.table_box .order_num p{
+	margin-bottom: 0;
+	font-size: 0.87rem;
+	color: #333;
+}
+/*订单详情*/
+#me_center .table_box .order_detail{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.table-responsive .table{
+	
+}
+.table-responsive .table th{
+	white-space:nowrap;
+	font-size: 0.87rem;
+	color: #333333;
+}
+.table-responsive .table td{
+	white-space:nowrap;
+	font-size: .87rem;
+	color: #666666;
+}
+.table-responsive .table .table_car{
+	background:#f2f2f2;
+	border-bottom: 1px solid #dddddd;
+}
+.table-responsive .table .table_paper{
+	background: #b3b3b3;
+	padding-bottom: 3rem;
+}
+.table-responsive .table .table_date{
+	border-bottom: 1px solid #dddddd;
+}
+/*金额*/
+.table-responsive .table #money_num{
+	color: #FE6F83;
+}
+.table-responsive .table tr .text-center{
+	line-height: 1.8;
+}
+.table-responsive .table td #pay_btn{
+	display: block;
+	width:3.75rem;
+	height: 1.5rem;
+	background:#33A55A;
+	font-size:0.75rem;
+	color: #ffffff;
+	text-align: center;
+	line-height: 1.9;
+	border-radius: .2rem;
+	cursor: pointer;
+	transition:all .3s ease;
+}
+.table-responsive .table td #pay_btn:hover{
+	background:#2a884a;
+}
+.table-responsive .table td #vieworder{
+	color: #349EEE;
+	cursor: pointer;
 }
 /*-----------------------------*/
 
 
 /*选项卡--会员资料*/
 .body_box #me_data{
-	height: 300px;
-	background:darkblue;
+	border: 1px solid black;
+}
+.body_box #me_data .toptitle{
+	padding: .5rem .5rem .5rem 0;
+	border-bottom: 1px solid #dddddd;
+	text-indent: .5rem;
+	color: #33A55A;
+}
+#me_data .detail_img img{
+	width: 6.25rem;
+	height: 6.25rem;
+	overflow: hidden;
+	border: 2px solid #33A55A;
+	border-radius: 50%;
+}
+input::-webkit-input-placeholder{
+	font-size: 0.87rem;
+}
+.col-md-6 textarea{
+	resize: none;
+}
+.col-md-6 textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size:0.87rem;
+}
+.col-md-6 textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size:0.87rem;
+}
+.col-md-6 textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size:0.87rem;
+}
+.col-md-6 textarea::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size:0.87rem;
+ 
+}
+.form-group input{
+	width: 100%!important;
+}
+
+.form_one{
+	margin-top: 2.18rem;
+}
+.form-group{
+	margin-bottom: 2.18rem;
+}
+.form-group select{
+	font-size: 0.87rem;
+}
+.form-group .sin_l{
+	font-size: 0.87rem;
+	color: #333333;
+}
+.form-group span{
+	font-size: 0.75rem;
+	color: #999999;
+}
+
+form button{
+	width: 20%;
+	margin-top:1rem;
+	margin-bottom:2.5rem;
 }
 /*-----------------------------*/
 
 /*选项卡--我的订单*/
 .body_box #me_order{
-	height: 300px;
-	background:blueviolet;
+	background: #ffffff;
+}
+.body_box #me_order .order-sx{
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.body_box #me_order .order-sx .input-group{
+	width: 100%!important;
+}
+.body_box #me_order .shai-x{
+	font-size: 0.87rem;
+	color: #666666!important;	
 }
 /*-----------------------------*/
 
 /*选项卡--会员充值*/
 .body_box #me_pay{
-	height: 300px;
-	background:#00B83F;
+	border: 1px solid red;
 }
-
+.RadioStyle input {
+	display: none
+}
+.RadioStyle label {
+	border: 1px solid #33A55A;
+	width:20%;
+	margin-bottom:1rem!important;
+	padding: 2px 10px 2px 5px;
+	line-height: 28px;
+	min-width: 80px;
+	text-align: center;
+	float: left;
+	margin: 2px;
+	color: #666666;
+	font-size: 0.75rem;
+	border-radius: 4px
+}
+.RadioStyle input:checked + label {
+	background: url(../img/ico_checkon.svg) no-repeat right bottom;
+	background-size: 21px 21px;
+	color: #33A55A;
+}
 .body_box .right_box .tab-pane{
 	color: #ffffff;
 }
+
+
 /*媒体查询*/
 /*桌面端*/
+@media only screen and (min-width:1200px) {
+	/*我的订单*/
+	.body_box #me_order .order-sx{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.body_box #me_order .order-sx .title{
+		text-align: right;
+	}
+	.body_box #me_order .order-sx .state-sx{
+		width: 38%;
+	}
+}	
 @media only screen and (min-width:998px) {
 	.body_box .left_nav{
 		width: 25%;
@@ -135,17 +328,16 @@ a{
 	.body_box .left_nav .nav li{
 		margin-bottom: 1rem;
 	}
-
+	
+	/*会员中心*/
 	/*个人中心-top号码*/
 
 	#me_center .me_detail .detail_paper{
 		width:80%;
-		border: 1px solid #33A55A;
 		padding:1.5rem 0 1.5rem 0;
 	}
 	#me_center .me_detail .detail_paper .paper_top{
 		width: 100%;
-		background: darkgoldenrod;
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -154,47 +346,62 @@ a{
 	}
 	/*号码*/
 	#me_center .me_detail .detail_paper .paper_top .users{
-		width: 36%;
-		background: darkgreen;
 	}
 	/*等级*/
 	#me_center .me_detail .detail_paper .paper_top .levels{
-		width: 40%;
-		background:darkmagenta;
 	}
 	/*个人中心bottom分红*/
 	#me_center .me_detail .detail_paper .paper_bottom{
-		background: darkolivegreen;
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
 		padding-bottom: 1rem;
 	}
-	#me_center .me_detail .detail_paper .paper_bottom div{
-		width: 32%;
+
+	/*表格搜索*/
+	.serch .input-group{
+		width: 30%;
+		margin-top: .3rem;
+		margin-bottom: .3rem!important;
 	}
-	#me_center .me_detail .detail_paper .paper_bottom .c_money{
-		background: red;
-	}
-	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
-		width: 23%;
-		background:yellow;
-	}
-	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
-		width: 23%;
-		background: green;
-	}
+	#me_order .table-responsive{
+		padding-left: 15px;
+		padding-right: 15px;
+	} 
 	
+	
+}
+@media only screen and (min-width:768px){
+	.form-group label{
+		display: flex;
+		justify-content: flex-end;
+	}
+	.form-group .title{
+		margin-left: 30px;
+	}
+	.form-group .xuan_add {
+    	margin-left: 0px!important;
+    }
+	/*复选框*/
+
 }
 
 /*适配平板*/
+@media only screen and (max-width:1025px) {
+	.body_box #me_order .order-sx .date-sx .shai-x{
+		margin-bottom: .4rem;
+	}
+	.body_box #me_order .order-sx .state-sx .shai-x{
+		margin-bottom: .4rem;
+	}
+}
 @media only screen and (max-width:998px) {
+	/*会员中心*/
 	#me_center .me_detail .detail_img{
 		margin-top: .5rem;
 		margin-bottom: .5rem;
 	}
 	#me_center .me_detail .detail_paper .paper_top{
-		background: darkgoldenrod;
 		display: flex;
 		align-items: center;
 		/*flex-direction: column;*/
@@ -202,14 +409,11 @@ a{
 	}
 	#me_center .me_detail .detail_paper .paper_bottom{
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		background: royalblue;
 		
 	}
 	#me_center .me_detail .detail_paper .paper_top .users{
-		background: darkgreen;
 		margin-bottom: .5rem;
 	}
 	#me_center .me_detail{
@@ -219,45 +423,49 @@ a{
 		flex-direction: column;
 	}
 	
-	#me_center .me_detail .detail_paper .paper_top .users{
-		width: 33%;
-		display: flex;
-		justify-content: flex-start;
-		background: darkgreen;
+
+
+	.serch .input-group{
+		width: 50%;
+		margin-top: .3rem;
+		margin-bottom: .3rem!important;
 	}
-	/*等级*/
-	#me_center .me_detail .detail_paper .paper_top .levels{
-		width: 33%;
-		background:darkmagenta;
-		justify-content: flex-start;
+	
+	/*会员资料*/
+	#me_data .toptitle{
+		text-indent: 0;
+		text-align: center;
 	}
-	#me_center .me_detail .detail_paper .paper_bottom .c_money{
-		width: 33%;
-		background: red;
-		justify-content: flex-start;
+	/*我的订单*/
+	.body_box #me_order .order-sx .state-sx .shai-x{
+		margin-left: 15px;
 	}
-	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
-		width: 33%;
-		background:yellow;
-		justify-content: flex-start;
+	.body_box #me_order .order-sx .state-sx .title{
+		margin-top: .5rem;
+		margin-bottom: .4rem;
 	}
-	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
-		width: 33%;
-		background: green;
-		justify-content: flex-start;
+	.body_box #me_order .order-sx .date-sx .title{
+		margin-bottom: .4rem;
 	}
+	.body_box #me_order .order-sx #datetimepicker4{
+		margin-bottom:1rem;
+	}
+
 	
 	
 }
 
 /*适配手机*/
 @media only screen and (max-width:768px) {
+	.body_box .left_nav .nav li{
+			width: 35%;
+}
+	/*会员中心*/
 	#me_center .me_detail .detail_img{
 		margin-top: .5rem;
 		margin-bottom: .5rem;
 	}
 	#me_center .me_detail .detail_paper .paper_top{
-		background: darkgoldenrod;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -268,11 +476,12 @@ a{
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		background: royalblue;
 		
 	}
+	#me_center .me_detail .detail_paper .col-md-4{
+		padding-left: 15%;
+	}
 	#me_center .me_detail .detail_paper .paper_top .users{
-		background: darkgreen;
 		margin-bottom: .5rem;
 	}
 	#me_center .me_detail{
@@ -283,33 +492,79 @@ a{
 	}
 	
 	#me_center .me_detail .detail_paper .paper_top .users{
-		width: 50%;
+		width: 90%;
 		display: flex;
-		justify-content: flex-start;
-		background: darkgreen;
 	}
 	/*等级*/
 	#me_center .me_detail .detail_paper .paper_top .levels{
-		width: 50%;
-		background:darkmagenta;
-		justify-content: flex-start;
+		width: 90%;
 	}
 	#me_center .me_detail .detail_paper .paper_bottom .c_money{
-		width: 50%;
-		background: red;
-		justify-content: flex-start;
+		width: 90%;
+		margin-top: .5rem;
 	}
 	#me_center .me_detail .detail_paper .paper_bottom .m_fmoney{
-		width: 50%;
-		background:yellow;
-		justify-content: flex-start;
+		width: 90%;
 	}
 	#me_center .me_detail .detail_paper .paper_bottom  .x_jfen{
-		width: 50%;
-		background: green;
-		justify-content: flex-start;
+		width: 90%;
+	}
+	#me_center .me_detail .detail_paper .paper_bottom div{
+		margin-bottom: .5rem;
 	}
 	
+	.serch .input-group{
+		width: 60%;
+		margin-top: .3rem;
+		margin-bottom: .3rem!important;
+	}
+	
+	#me_center .table_box .order_detail .order_car .num_time{
+		-webkit-overflow-scrolling: touch;  
+	   	overflow-x: scroll;  
+	}
+	
+	.form_one .col-md-2{
+		margin-bottom: .8rem;
+	}
+	/*我的订单*/
+	
+	
+	.body_box #me_order .order-sx .state-sx .shai-x{
+		color: #666666;
+		margin-left: 15px;
+	}
 	
 }
-	
+@media only screen and (max-width:767px) {
+	.name_tishi{
+		margin-left:15px;
+	}
+	.user_name{
+		margin-bottom: .5rem;
+	}
+	.user_phone{
+		margin-bottom: .5rem;
+	}
+
+}
+
+@media only screen and (max-width:576px) {
+	.form-group{
+		margin-bottom: 1.5rem;
+	}
+
+	.form-group span{
+		/*margin-left: 15px;
+		margin-top: 1rem;*/
+	}
+	form button{
+		width: 35%;
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+	}
+	.name_tishi{
+		margin-top: .5rem;
+	}
+
+}

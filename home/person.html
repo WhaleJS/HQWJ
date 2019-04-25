@@ -5,7 +5,7 @@
     <!--IE兼容-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--移动端视口标签-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <!--重置css-->
     <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
     <!--boot4css-->
@@ -16,6 +16,12 @@
 	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
 	  <!--尾部css-->
 	  <link rel="stylesheet" type="text/css" href="repeat/css/footer.css"/>
+	  <!--时间选择器css-start-->
+		<link rel="stylesheet" href="https://getbootstrap.com/assets/css/docs.min.css" />
+	  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	  <link rel="stylesheet" type="text/css" href="assets/theme/css/base.css"/>
+	  <link rel="stylesheet" type="text/css" href="timecss/highlight.min.css"/>
+	  <link rel="stylesheet" type="text/css" href="assets/css/tempusdominus-bootstrap-4.css"/>
 	  <!--图标-->
 	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
 	  <!--jquery-->
@@ -26,9 +32,15 @@
 	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	  <!--压缩boot-min.js-->
 	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--时间选择器js-->
+	  <script src="timejs/moment-with-locales.min.js"></script>
+	  <script src="timejs/moment-timezone-with-data-2012-2022.min.js"></script>
+	  <script src="assets/theme/js/base.js"></script>
+		<script src="timejs/highlight.min.js"></script>
+		<script src="assets/theme/js/tempusdominus-bootstrap-4.js"></script>
 	  <!--轮播图无法使用手势滑动-->
 	  <script src="repeat/js/toucher.js"></script>
-      <title>个人中心</title>
+    <title>个人中心</title>
 	</head>
 <body>
 	   <!--插入导航-->
@@ -69,55 +81,518 @@
 				 		 <div class="detail_img">
 				 		 		<img src="img/tab_img.png" class=""/>
 				 		 </div>
-				 		 <!--用户的基本信息-分红-余额等等-->
+				 		 <!--用户的基本信息-->
 				 		 <div class="detail_paper d-flex flex-column">
 				 		 	  <!--用户账号和等级-->
-				 		 	  <div class="paper_top">
+				 		 	  <div class="paper_top d-flex justify-content-start">
 				 		 	  	  <!--电话号码-->
-				 		 	  	  <div class="users d-flex align-items-center justify-content-around">
-				 		 	  	  	 <i class="iconfont" style="color:#33A55A;">&#xe60e;</i>
-				 		 	  	  	 <p style="margin-bottom: 0;">HI,&nbsp;18548652635</p>
+				 		 	  	  <div class="users col-md-4 d-flex align-items-center justify-content-start">
+				 		 	  	  	 <i class="iconfont" style="color:#33A55A;">&#xe637;</i>
+				 		 	  	  	 <p style="margin-bottom: 0;color:#333333;">Hi,&nbsp;张国胜</p>
 				 		 	  	  </div>
 				 		 	  	  <!--会员等级-->
-				 		 	  	  <div class="levels d-flex align-items-center justify-content-around">
+				 		 	  	  <div class="levels col-md-4 d-flex align-items-center justify-content-start">
 				 		 	  	  	 <i class="iconfont" style="color:#33A55A;">&#xe723;</i>
 				 		 	  	  	 <p style="margin-bottom: 0;font-size: 1rem;color:#333333;">铂金会员</p>
-				 		 	  	  	 <span style="color:#349EEE;font-size: 0.87rem;">升级会员</span>
+				 		 	  	  	 <span style="color:#349EEE;font-size: 0.87rem;padding-left: 5px;">升级会员</span>
 				 		 	  	  </div>
 				 		 	  </div>
 				 		 	  <!--用户余额分红-->
 				 		 	  <div class="paper_bottom">
 				 		 	  	 <!--充值余额-->
-				 		 	  	 <div class="c_money d-flex align-items-center justify-content-around">
+				 		 	  	 <div class="c_money col-md-4 d-flex align-items-center justify-content-start" style="padding-right: 0;">
 				 		 	  	 	  <i class="iconfont" style="color:#FE7B8D;">&#xe608;</i>
-				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">充值余额:6000.00</p>
-				 		 	  	  	<span style="color:#349EEE;font-size: 0.87rem;">去充值</span>
+				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">充值余额:&nbsp;&nbsp;6000.00</p>
+				 		 	  	  	<span style="color:#349EEE;font-size: 0.87rem;padding-left: 4px;">去充值</span>
 				 		 	  	 </div>
 				 		 	  	 <!--门店分红-->
-				 		 	  	 <div class="m_fmoney d-flex align-items-center justify-content-around">
+				 		 	  	 <div class="m_fmoney col-md-4 d-flex align-items-center justify-content-start">
 				 		 	  	 	  <i class="iconfont" style="color:#33A55A;">&#xe608;</i>
-				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">门店分红:6000.00</p>
+				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">门店分红:&nbsp;&nbsp;6000.00</p>
 				 		 	  	 </div>
 				 		 	  	 <!--系统积分-->
-				 		 	  	 <div class="x_jfen d-flex align-items-center justify-content-around">
+				 		 	  	 <div class="x_jfen col-md-4 d-flex align-items-center justify-content-start">
 				 		 	  	 		<i class="iconfont" style="color:#33A55A;">&#xe608;</i>
-				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">系统积分:6000.00</p>
+				 		 	  	 	  <p style="margin-bottom: 0;font-size: 0.87rem;color:#333333;">系统积分:&nbsp;&nbsp;6000.00</p>
 				 		 	  	 </div>
 				 		 	  </div>
 				 		 </div>
 				 	</div>
+				 		<!--订单表-->
+				 	<div class="table_box">
+				 		<!--搜索框-->
+				 		<div class="serch d-flex align-items-center justify-content-between">
+				 			 <span style="font-size: 0.87rem;color: #333333;">我的订单</span>
+				 			 <div class="input-group mb-3">
+				 			   	<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="width: 30%;">
+								  <div class="input-group-prepend">
+								    <button class="btn btn-outline-secondary" type="button"><i class="iconfont">&#xe69d;</i></button>
+								  </div>
+							</div>
+				 		</div>
+				 		<!--订单数量-->
+				 		<div class="order_num d-flex align-items-center justify-content-around">
+				 			 <p id="all">全部订单&nbsp;(1)</p>
+				 			 <p id="wait">办理中&nbsp;(1)</p>
+				 			 <p id="wait_pay">待付款&nbsp;(1)</p>
+				 			 <p id="already">已完成&nbsp;(1)</p>
+				 		</div>
+				 		<!--订单详情-->
+				 		<div class="order_detail">
+			 					<div class="table-responsive">          
+									  <table class="table table-striped">
+									    <thead>
+									      <tr class="table_paper">
+									        <th>车辆信息</th>
+									        <th>服务类型</th>
+									        <th>接单状态</th>
+									        <th>付款状态</th>
+									        <th>操作</th>
+									      </tr>
+									    </thead>
+									    <tbody>
+									    	<!--订单号码-->
+									      <tr class="table_date">
+									        <td>订单号:12346874641587</td>
+									        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+									        <td>状态：已付款</td>
+									        <td></td>
+									        <td></td>
+									      </tr>
+									      <!--车辆详情-->
+									       <tr class="table_car">
+									        <td>
+									        	<p>2018款 奥迪A4L 2.0T</p>
+									        	<p style="margin-bottom: 0;">川A45644</p>
+									        </td>
+									        <td>养护</td>
+									        <td>已接待</td>
+									        <td id="money_num">￥1399</td>
+									        <td class="">
+									        	<a href="" id="pay_btn">付款</a><br/>
+									        	<span id="vieworder">订单详情</span>
+									        </td>
+									      </tr>
+									    </tbody>
+									  </table>
+								</div>
+								<div class="table-responsive">  
+									  <table class="table table-striped">
+									    <thead>
+									      <tr class="table_paper">
+									        <th>车辆信息</th>
+									        <th>服务类型</th>
+									        <th>接单状态</th>
+									        <th>付款状态</th>
+									        <th>操作</th>
+									      </tr>
+									    </thead>
+									    <tbody>
+									    	<!--订单号码-->
+									      <tr class="table_date">
+									        <td>订单号:12346874641587</td>
+									        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+									        <td>状态：已付款</td>
+									        <td></td>
+									        <td></td>
+									      </tr>
+									      <!--车辆详情-->
+									       <tr class="table_car">
+									        <td>
+									        	<p>2018款 奥迪A4L 2.0T</p>
+									        	<p style="margin-bottom: 0;">川A45644</p>
+									        </td>
+									        <td>养护</td>
+									        <td>已接待</td>
+									        <td id="money_num">￥1399</td>
+									        <td class="">
+									        	<a href="" id="pay_btn">付款</a><br/>
+									        	<span id="vieworder">订单详情</span>
+									        </td>
+									      </tr>
+									    </tbody>
+									  </table>
+									</div>
+									<div class="table-responsive">  
+									  <table class="table table-striped">
+									    <thead>
+									      <tr class="table_paper">
+									        <th>车辆信息</th>
+									        <th>服务类型</th>
+									        <th>接单状态</th>
+									        <th>付款状态</th>
+									        <th>操作</th>
+									      </tr>
+									    </thead>
+									    <tbody>
+									    	<!--订单号码-->
+									      <tr class="table_date">
+									        <td>订单号:12346874641587</td>
+									        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+									        <td>状态：已付款</td>
+									        <td></td>
+									        <td></td>
+									      </tr>
+									      <!--车辆详情-->
+									       <tr class="table_car">
+									        <td>
+									        	<p>2018款 奥迪A4L 2.0T</p>
+									        	<p style="margin-bottom: 0;">川A45644</p>
+									        </td>
+									        <td>养护</td>
+									        <td>已提车</td>
+									        <td id="money_num">￥1399</td>
+									        <td class="">
+									        	<a href="" id="pay_btn">付款</a><br/>
+									        	<!--<span id="vieworder">订单详情</span>-->
+									        </td>
+									      </tr>
+									    </tbody>
+									  </table>
+									</div>
+				 		</div>
+				 	</div>
 				 </div>
 				<!--会员资料-->
 				 <div id="me_data" class="tab-pane fade">
-					会员资料
+					 	 <p class="toptitle">会员资料</p>
+						 <!--图片上传-->
+							 <div class="file_box form-group form-inline">
+								 	 <div class="col-4 col-md-3 title">
+							      	<label for="username" class="sin_l">头像:</label>
+							      </div>
+							 		 <div class="detail_img col-8 col-md-4">
+							 		 		<img src="img/tab_img.png" class=""/>
+							 		 </div>
+							 </div>
+							 <!--显示会员名-->
+						    <div class="form-group form-inline">
+						    	<div class="col-4 col-md-3 title">
+						      	<label for="username" class="sin_l">会员名:</label>
+						      </div>
+						      <div class="col-8 col-md-4 user_name" id="userName" style="color:#333333;font-size: 0.87rem;">
+						      		小王
+						      </div>
+						    </div>
+						 <!--手机号码-->
+						    <div class="form-group form-inline">
+						    	<div class="col-4 col-md-3 title">
+						      	<label for="username" class="sin_l">手机号:</label>
+						      </div>
+						      <div class="col-8 col-md-7 user_phone" style="color:#333333;">
+						      		<span class="" style="color: #333333;font-size: 0.87rem;" id="userPhone">1524894514</span>&nbsp;&nbsp;
+						      		<a href="#" style="color: #349EEE;font-size: 0.75rem;">更换手机号码</a>
+						      </div>
+						    </div>
+						 
+						 <!--输入组-->
+					   <form>
+						    <!--输入姓名--必填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="username" class="sin_l">姓名:</label>
+						      </div>
+						      <div class="col-12 col-md-4">
+						      	<input type="text" class="form-control" id="newName" placeholder="请输入真实姓名">
+						      </div>
+						      <span class="name_tishi">注：请输入真实姓名，每个账号仅有一次机会。</span>
+						    </div>
+						    <!--选择性别-->
+						    <div class="form-group form-inline form_one">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="sex" class="sin_l">性别:</label>
+						    	</div>
+							    <div class="col-12 col-md-4">
+							      <select name="" class="form-control" style="width: 100%">
+							      		<option value="">请选择性别</option>
+							      		<option value="">男</option>
+							      		<option value="">女</option>
+							      </select>
+							    </div>
+						    </div>
+						    <!--选择出生日期-->
+						    <div class="form-group form-inline form_one">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="brith" class="sin_l">出生日期:</label>
+						    	</div>
+							    <div class="col-12 col-md-4">
+						      	<input type="text" class="form-control" id="birthDay" placeholder="请输入您的生日日期">
+						      </div>
+						    </div>
+						    <!--邮箱--必填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="emai" class="sin_l">邮箱账号:</label>
+						    	</div>
+						      <div class="col-12 col-md-4">
+						      	<input type="email" class="form-control" id="emai" placeholder="请输入您的邮箱">
+						      </div>
+						    </div>
+						    <!--选择地区-->
+						    <div class="form-group form-inline form_one">
+						    	<div class="col-12 col-md-3 title">
+						    		<label for="area" class="sin_l">所在地区:</label>
+						    	</div>
+						    	<!--省-->
+							    <div class="col-12 col-md-2">
+							      <select name="" class="form-control" style="width: 100%">
+							      		<option value="">四川省</option>
+							      		<option value="">贵州省</option>
+							      </select>
+							    </div>
+							    <!--市-->
+							     <div class="col-12 col-md-2">
+							      <select name="" class="form-control" style="width: 100%">
+							      		<option value="">成都市</option>
+							      		<option value="">贵阳市</option>
+							      </select>
+							    </div>
+							    <!--区-->
+							     <div class="col-12 col-md-2">
+							      <select name="" class="form-control" style="width: 100%">
+							      		<option value="">金堂县</option>
+							      		<option value="">金堂县</option>
+							      </select>
+							    </div>
+						    </div>
+						    <!--详细地址--选填-->
+						    <div class="form-group form-inline">
+						    	<div class="col-12 col-md-3 title">
+						      	<label for="add_detail" class="sin_l">详细地址:</label>
+						      </div>
+						      <div class="col-12 col-md-6">
+						     		 <input type="text" class="form-control" id="add_detail" placeholder="请输入您的详细地址">
+						      </div>
+						    </div>
+						    <!--提交按钮-->
+						    <div class="col-12 d-flex justify-content-center">
+						    	<button type="submit" class="btn btn-success" id="send_xiu">保存修改</button>
+						    </div>
+  						</form>
 				 </div>
+				 
 				<!--我的订单-->
 				 <div id="me_order" class="tab-pane fade">
-					我的订单
+					 		<!--订单表-->
+					 	<div class="table_box">
+					 		<!--搜索框-->
+					 		<div class="serch d-flex align-items-center justify-content-between">
+					 			 <span style="font-size: 0.87rem;color:#33A55A;">我的订单</span>
+					 			 <div class="input-group mb-3">
+					 			   	<input type="text" class="form-control" placeholder="请搜索" aria-label="" aria-describedby="basic-addon1" style="width: 30%;">
+									  <div class="input-group-prepend">
+									    <button class="btn btn-outline-secondary" type="button"><i class="iconfont">&#xe69d;</i></button>
+									  </div>
+								</div>
+					 		</div>
+					 		<!--订单数量-->
+					 		<div class="order_num d-flex align-items-center justify-content-around">
+					 			 <p id="all">全部订单&nbsp;(1)</p>
+					 			 <p id="wait">办理中&nbsp;(1)</p>
+					 			 <p id="wait_pay">待付款&nbsp;(1)</p>
+					 			 <p id="already">已完成&nbsp;(1)</p>
+					 		</div>
+					 		<!--筛选订单-->
+					 		<div class="order-sx">
+					 			<!--日期筛选-->
+					 			<div class="date-sx form-inline">
+							    	<div class="col-12 col-md-2 title">
+							    		 <span class="shai-x">日期筛选:</span>
+							    	</div>
+							    	<!--开始时间-->
+							    	<div class="form-group col-lg-5 col-sm-12">
+			                <div class="input-group date d-flex flex-nowrap" id="datetimepicker4" data-target-input="nearest">
+			                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" placeholder="请选择日期"/>
+			                    <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+			                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+			                    </div>
+			                </div>
+	           				</div>
+	           				<!--结束时间-->
+	           				<div class="form-group col-lg-5 col-sm-12">
+			                <div class="input-group date d-flex flex-nowrap" id="datetimepicker5" data-target-input="nearest">
+			                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" placeholder="请选择日期"/>
+			                    <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+			                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+			                    </div>
+			                </div>
+	           				</div>
+           			</div>	
+           				<!--状态筛选-->
+           				<div class="state-sx form-inline">
+		           				<div class="title">
+		           					 <span class="shai-x">状态筛选:</span>
+								    	</div>
+								    	<div class="input-group col-lg-9 col-md-12">
+									      <select name="" class="form-control" style="width: 100%;font-size: 0.87rem;color: #666666;">
+									      		<option value="">请选择状态</option>
+									      		<option value="">全部</option>
+									      		<option value="">部分</option>
+									      </select>
+									    </div>
+							    </div>
+						  </div>
+					 		<!--订单详情-->
+					 		<div class="order_detail">
+				 					<div class="table-responsive">          
+										  <table class="table table-striped">
+										    <thead>
+										      <tr class="table_paper">
+										        <th>车辆信息</th>
+										        <th>服务类型</th>
+										        <th>接单状态</th>
+										        <th>付款状态</th>
+										        <th>操作</th>
+										      </tr>
+										    </thead>
+										    <tbody>
+										    	<!--订单号码-->
+										      <tr class="table_date">
+										        <td>订单号:12346874641587</td>
+										        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+										        <td>状态：已付款</td>
+										        <td></td>
+										        <td></td>
+										      </tr>
+										      <!--车辆详情-->
+										       <tr class="table_car">
+										        <td>
+										        	<p>2018款 奥迪A4L 2.0T</p>
+										        	<p style="margin-bottom: 0;">川A45644</p>
+										        </td>
+										        <td>养护</td>
+										        <td>已接待</td>
+										        <td id="money_num">￥1399</td>
+										        <td class="">
+										        	<a href="" id="pay_btn">付款</a><br/>
+										        	<span id="vieworder">订单详情</span>
+										        </td>
+										      </tr>
+										    </tbody>
+										  </table>
+									</div>
+									<div class="table-responsive">  
+										  <table class="table table-striped">
+										    <thead>
+										      <tr class="table_paper">
+										        <th>车辆信息</th>
+										        <th>服务类型</th>
+										        <th>接单状态</th>
+										        <th>付款状态</th>
+										        <th>操作</th>
+										      </tr>
+										    </thead>
+										    <tbody>
+										    	<!--订单号码-->
+										      <tr class="table_date">
+										        <td>订单号:12346874641587</td>
+										        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+										        <td>状态：已付款</td>
+										        <td></td>
+										        <td></td>
+										      </tr>
+										      <!--车辆详情-->
+										       <tr class="table_car">
+										        <td>
+										        	<p>2018款 奥迪A4L 2.0T</p>
+										        	<p style="margin-bottom: 0;">川A45644</p>
+										        </td>
+										        <td>养护</td>
+										        <td>已接待</td>
+										        <td id="money_num">￥1399</td>
+										        <td class="">
+										        	<a href="" id="pay_btn">付款</a><br/>
+										        	<span id="vieworder">订单详情</span>
+										        </td>
+										      </tr>
+										    </tbody>
+										  </table>
+										</div>
+										<div class="table-responsive">  
+										  <table class="table table-striped">
+										    <thead>
+										      <tr class="table_paper">
+										        <th>车辆信息</th>
+										        <th>服务类型</th>
+										        <th>接单状态</th>
+										        <th>付款状态</th>
+										        <th>操作</th>
+										      </tr>
+										    </thead>
+										    <tbody>
+										    	<!--订单号码-->
+										      <tr class="table_date">
+										        <td>订单号:12346874641587</td>
+										        <td>下单时间:&nbsp;2019-4-15&nbsp;15:25:36</td>
+										        <td>状态：已付款</td>
+										        <td></td>
+										        <td></td>
+										      </tr>
+										      <!--车辆详情-->
+										       <tr class="table_car">
+										        <td>
+										        	<p>2018款 奥迪A4L 2.0T</p>
+										        	<p style="margin-bottom: 0;">川A45644</p>
+										        </td>
+										        <td>养护</td>
+										        <td>已提车</td>
+										        <td id="money_num">￥1399</td>
+										        <td class="">
+										        	<a href="" id="pay_btn">付款</a><br/>
+										        	<!--<span id="vieworder">订单详情</span>-->
+										        </td>
+										      </tr>
+										    </tbody>
+										  </table>
+										</div>
+					 		</div>
+					 	</div>
 				 </div>
+				 
 				<!--会员充值-->
 				 <div id="me_pay" class="tab-pane fade">
-					会员充值
+						<div class="pay_bootm">
+							<p class="d-flex justify-content-start align-items-center" style="border-bottom: 1px solid #dddddd;font-size: 1rem;color: #333333;padding: .5rem 0 .5rem 0;">
+								<i class="iconfont" style="color: #33A55A;font-weight: bold;">&#xe605;</i>
+								会员充值
+							</p>
+							<div class="pay_box">
+								 <p class="text-center" style="font-size:0.87rem;color:#999999">会员规则：用户注册后默认为普通会员，会员等级与单次充值金额有关，与累计充值金额无关。</p>
+								  <div class="col-12 col-md-10 mx-auto d-flex justify-content-around align-items-center">
+						     		<div class="RadioStyle" style="width: 100%;">
+									    <div class="Block PaddingL d-flex align-items-center justify-content-around flex-wrap">
+									        <input type="radio" name="Storage" id="love1"/>
+									        <label for="love1" class="d-flex justify-content-center">100</label>
+									        
+									        <input type="radio" name="Storage" id="love2"/>
+									        <label for="love2" class="d-flex justify-content-center">200</label>
+									        
+									        <input type="radio" name="Storage" id="love3"/>
+									        <label for="love3" class="d-flex justify-content-center">500</label>
+									        
+									        <input type="radio" name="Storage" id="love4"/>
+									        <label for="love4" class="d-flex justify-content-center">1000</label>
+									        
+									        <input type="radio" name="Storage" id="love5"/>
+									        <label for="love5" class="d-flex justify-content-center">2000</label>
+									        
+									        <input type="radio" name="Storage" id="love6"/>
+									        <label for="love6" class="d-flex justify-content-center">5000</label>
+									        
+									        <input type="radio" name="Storage" id="love7"/>
+									        <label for="love7" class="d-flex justify-content-center">10000</label>
+									        
+									        <input type="radio" name="Storage" id="love8"/>
+									        <label for="love8" class="d-flex justify-content-center">20000</label>
+									    </div>
+										</div>
+						      </div>
+						      <!--充值按钮-->
+						      <div class="col-12 d-flex justify-content-center" style="margin-top: 2rem;margin-bottom: 3rem;">
+						    		<button type="submit" class="btn btn-success" id="send_pay" style="font-size: 0.87rem;padding-left: 1.5rem;padding-right: 1.5rem;">确认充值</button>
+						    	</div>
+							</div>
+						</div>
 				 </div>
 			</div>
 			
@@ -127,5 +602,33 @@
 		 	   
 		<!--尾部插入footer-->
 		<div class="last_div"></div>
+			<!--脚本-->
+			<script type="text/javascript">
+					$(function(){
+						
+//						充值选项
+						var chec_list = Array.from($('.RadioStyle label'))
+				 		chec_list.forEach(function(value,index){
+				 					var flag = true;
+//				 					点击添加边框
+				 					chec_list[index].onclick = function(){
+					 							this.style.border = '1px solid #33A55A';
+				 					}
+				 					//				 						鼠标移出
+				 					chec_list[index].onmouseout = function(){
+//				 						 this.style.border = '1px solid #cccccc';
+				 					}
+				 		})
+//				 		  搜索订单
+				 		  $('#datetimepicker4').datetimepicker({
+                    format: 'L'
+                });
+							$('#datetimepicker5').datetimepicker({
+                    format: 'L'
+                });                
+				 		
+					})
+			</script>
+			
 </body>
 </html>

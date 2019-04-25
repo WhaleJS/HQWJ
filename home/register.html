@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.css"/>
+	  <!--index.css-->
+	  <link rel="stylesheet" type="text/css" href="css/register.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
+	  <!--尾部css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/footer.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
+	  <!--jquery-->
+	  <script src="js/jquery-3.3.1.min.js"></script>
+	   <!--复用导航.js-->
+	  <script src="repeat/js/repeat.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--轮播图无法使用手势滑动-->
+	  <script src="repeat/js/toucher.js"></script>
+	  <script src="repeat/js/Compat.js"></script>
+      <title>注册</title>
+	</head>
+<body>
+	   <!--插入导航-->
+		<div class="first_div"></div>
+		
+			<!--页面容器-->
+			<div class="container body_box">
+					
+					<div class="row col-12 col-md-12 col-lg-5 login_box mx-auto">
+						    <div class="col-12">
+						    	<p class="text-center" style="color:#1F8C44;font-size: 1.12rem;border-bottom: 1px solid #ccc;padding-bottom: 1rem;">欢迎注册环球万家会员</p>
+						    </div>
+					      <!--注册用户名--必填-->
+						    <div class="input-group col-12">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe637;</i></span>
+								  </div>
+								  <input type="text" id="username" class="form-control" placeholder="请输入用户名(限制四位字符)" maxlength="4" onblur="userName()">
+								</div>
+						     <!--用户手机号码--必填-->
+						    <div class="input-group col-12">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe630;</i></span>
+								  </div>
+								  <input type="number" id="userphone" class="form-control" placeholder="请输入手机号" aria-label="Username" aria-describedby="basic-addon1" maxlength="11" onblur="isPhone()">
+								</div>
+								 <!--输入验证码-->
+						    <div class="input-group col-12">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe723;</i></span>
+								  </div>
+							  	<input type="text" id="user_code" class="form-control" placeholder="请输入验证码">
+								  <div class="input-group-append">
+								    <span id="get_code" class="input-group-text" style="font-size: .87rem;cursor: pointer;background:#33A55A;color: #ffffff;" onclick="getCode()">获取验证码</span>
+								  </div>
+								</div>
+								<!--普通用户登录按钮-->
+								<div class="col-12">
+									 <button type="submit" class="btn" id="send_pu" style="width: 100%;font-size: .87rem;background:#33A55A;color:#ffffff;margin-top:.2rem;" onclick="singIn()">登录</button>
+								</div>
+								<!--返回登录-->
+								<div class="col-12">
+									 <p class="text-center"><a href="login.html" style="color:#666666;font-size:.87rem">返回登录</a></p>
+								</div>
+					</div>
+					<!--公司介绍-->
+					<div class="row fot mx-auto" style="width: 100%;">
+						 <div class="col-12" style="margin-top: 0;">
+						 		<p class="text-center">服务热线4008 020 666(周一至周日9:00~21:00)</p>
+						 </div>
+						  <div class="col-12" style="margin-top: 0;">
+						 		<p class="text-center">CopyRight © 2014-2017, All Rights Reserved 版权所有 车享 沪ICP备14000481号</p>
+						 </div>
+					</div>
+			</div>
+			
+			<script>
+				//全局API地址
+				var paths = 'http://gw.huanqiuwanjia.com/Api/';
+				
+				//用户名
+				function userName(){
+					var name = $('#username').val().trim()
+					if(name == ''){
+						alert('用户名不能为空')						
+					}
+				}
+				
+				//验证用户注册手机号码
+				function isPhone(){
+						var phone = $('#userphone').val()
+						if(!(/^1[34578]\d{9}$/.test(phone))){
+								alert('手机号码格式错误，请重新输入');
+								$('#userphone').val("");
+								return false
+						}
+					}
+				
+				//获取验证码
+				function getCode(){
+					  var phone = $('#userphone').val().trim()
+					  if(phone == ''){
+					  	 alert('请输入手机号')
+					  }else{
+					  	console.log(phone)
+					  	$.ajax({
+				  		   type: "POST",
+				  		   dataType:'json',
+							   url: paths + "login/register",
+							   data:{phone:phone},
+							   success: function(msg){
+									console.log(msg)
+							   }
+					  	})
+					  }
+				}
+				
+				//登录
+				function singIn(){
+					//用户名
+					var name = $('#username').val().trim()
+					//手机号码
+					var phone = $('#userphone').val().trim()
+					//验证码
+					var code = $('#user_code').val().trim()
+					if(name != '' && phone != '' && code != ''){
+						$.ajax({
+			  		   		type: "POST",
+			  		   		dataType:'json',
+						    url: paths + "login/register",
+						    data:{name:name,phone:phone,code:code},
+						    success: function(msg){
+								// 修改登录和注册为个人中心和退出
+								console.log($('#login'))
+								// $('#login').text('个人中心')
+								// $('#register').text('退出')
+								// window.location.replace('http://192.168.0.130/home/person.html')
+								if(!window.localStorage){
+									return false
+								}else{
+									localStorage.setItem('loginId','1')
+									window.open('http://192.168.0.130/home/person.html')
+								}
+						   }
+
+				  		})
+					}else{
+						alert('输入信息不能为空')
+					}
+				}
+			</script>
+</body>
+</html>

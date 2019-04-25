@@ -93,6 +93,12 @@ input::-webkit-input-placeholder{
 	/*复选框*/
 
 }
+@media only screen and (max-width:767px){
+	.newcar_zhu{
+		margin-left: 15px;
+	}
+
+}
 @media only screen and (max-width:576px) {
 	.userdetail .form-group{
 		margin-bottom: 1.5rem;

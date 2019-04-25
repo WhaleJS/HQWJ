@@ -26,10 +26,35 @@
 	    </ul>
 	     <!--登录注册-->
     	<div class="loginBox">
-    		<a href="../../home/person.html" id="login">个人中心</a>
-    		<a href="#" id="register">退出</a>
+    		<a href="../../home/login.html" id="login">登录</a>
+    		<a href="../../home/register.html" id="register">注册</a>
     	</div>
 	  </div>
 	</div>
 </nav>
 
+<!--回到顶部-->
+	<div class="fh_top d-flex justify-content-center align-items-center" id="retuTop">
+		<i class="iconfont">&#xe602;</i>
+	</div>
+<script>
+	// 登录状态
+	var loginId = localStorage.getItem('loginId')
+	console.log('登录状态' + loginId)
+	if(loginId == 1){
+		$('#login').html('<a href="../../home/person.html" id="person">个人中心</a>')
+		$('#register').html('<a href="#" id="clear">退出</a>')
+
+	}
+	$('#clear').click(function(event) {
+		var Ytui = confirm('您确认出登录状态吗?')
+		if(Ytui == true){
+			console.log('退出')
+			localStorage.setItem('loginId','2')
+			window.location.replace('http://192.168.0.130/index.html')
+			console.log(loginId)
+			$('#person').html('<a href="../../home/login.html" id="login">登录</a>')
+			$('#clear').html('<a href="../../home/register.html" id="register">注册</a>')
+		}
+	});
+</script>

@@ -43,6 +43,22 @@
 	padding-left: 10px;
 }
 
+/*返回顶部*/
+.fh_top{
+	position:fixed;
+	bottom: 5px;
+	right: 5px;
+	width: 3.12rem;
+	height: 3.12rem;
+	z-index: 999;
+	background: #333333;
+	cursor: pointer;
+	border-radius:.5rem;
+}
+.fh_top i{
+	font-size: 1.6rem;
+	color: #ffffff;
+}
 /*导航适配*/
 
 

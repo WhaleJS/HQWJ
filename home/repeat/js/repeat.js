@@ -1,9 +1,11 @@
 $(function(){ 
 //	获取页面的title-用于填写工单修改样式
 var title_mi = document.title
+var retop;
 //	加载头部
 	$.ajax({
 		type:"get",
+		async:false,
 		url:"../home/repeat/html/header.html",
 		success:function(data){
 			$('.first_div').before(data)
@@ -21,8 +23,13 @@ var title_mi = document.title
 			 		}
 			 		
 			 	})
+			 	retop = $('#retuTop')
+			 	
 		}
 	});
+	
+
+  	
 //加载尾部
 	$.ajax({
 		type:"get",
@@ -30,9 +37,17 @@ var title_mi = document.title
 		success:function(data){
 			$('.last_div').after(data)
 		}
-	});
-	
-
- 
-  
+	});	
+//	 返回顶部
+	 $(window).on('scroll', function() {
+	   if ($(this).scrollTop() > 100) { /* 返回顶部按钮将在用户向下滚动100像素后出现 */
+			   retop.fadeIn();
+	   } else {
+			   retop.fadeOut();
+	   }
+	 });
+ 	  retop.on('click', function(e) {
+		$("html, body").animate({scrollTop: 0}, 500);
+	 });
+		 	
 });

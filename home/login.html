@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!--IE兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--移动端视口标签-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <!--重置css-->
+    <link rel="stylesheet" type="text/css" href="repeat/css/reset.css"/>
+    <!--boot4css-->
+	  <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.css"/>
+	  <!--index.css-->
+	  <link rel="stylesheet" type="text/css" href="css/login.css"/>
+	  <!--头部导航css-->
+	  <link rel="stylesheet" type="text/css" href="repeat/css/header.css"/>
+	  <!--图标-->
+	  <link rel="stylesheet" type="text/css" href="dist/font/iconfont.css"/>
+	  <!--jquery-->
+	  <script src="js/jquery-3.3.1.min.js"></script>
+	  <!--滑动验证-->
+	  <script src="js/jq-slideVerify.js"></script>
+	   <!--复用导航.js-->
+	  <script src="repeat/js/repeat.js"></script>
+	  <!--popper弹窗.js-->
+	  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <!--压缩boot-min.js-->
+	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+	  <!--轮播图无法使用手势滑动-->
+	  <script src="repeat/js/toucher.js"></script>
+      <title>登录</title>
+	</head>
+<body>
+	   <!--插入导航-->
+		<div class="first_div"></div>
+		
+		<!--页面容器-->
+		<div class="container body_box d-flex justify-content-center align-items-center flex-column">
+			<div class="row login_box">
+				<!--登录标识图-->
+				<div class="col-12 col-lg-6 col-sm-12 log_img">
+					<img src="img/login.png" class="img-fluid"/>
+				</div>
+				<!--登录盒子-->
+				<div class="col-12 col-lg-5 col-sm-12 log_user">
+					<!--登录选项卡-->
+					 <ul class="nav nav-tabs d-flex justify-content-around align-items-center">
+					    <li class="nav-item">
+					      <a class="nav-link active" data-toggle="tab" href="#reme">会员登录</a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" data-toggle="tab" href="#hezuo">合作商登录</a>
+					    </li>
+  					</ul>
+				    <!--登录方式-->
+				    <div class="tab-content" style="width: 100%;">
+			    	    <!--普通会员登录-->
+					    <div id="reme" class="tab-pane fade show active">
+					       <!--用户名--必填-->
+						    <div class="input-group col-12">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe630;</i></span>
+								  </div>
+								  <input type="text" id="userphone" class="form-control" placeholder="请输入手机号" maxlength="11" onblur="isPhone()">
+								</div>
+								<!--滑动验证-->
+								<div class="input-group col-12 verify_box">
+								 	 <div class="verify-wrap" id="verify-wrap"></div>
+								</div>
+						    <!--输入验证码-->
+						    <div class="input-group col-12">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe723;</i></span>
+								  </div>
+							  	<input type="text" id="user_code" class="form-control" placeholder="请输入验证码">
+								  <div class="input-group-append">
+								    <span id="get_code" class="input-group-text" style="font-size: .87rem;cursor: pointer;" onclick="getCode()">获取验证码</span>
+								  </div>
+								</div>
+								<!--普通用户登录按钮-->
+								<div class="col-12">
+									 <button type="submit" class="btn" id="send_hui" style="width: 100%;font-size: .87rem;background:#33A55A;color:#ffffff;margin-top:.2rem;">登录</button>
+								</div>
+								<!--新用户-->
+								<div class="col-12 new_user" style="text-align: center;">
+									<span style="font-size: .87rem;color: #666666;">新用户?<a href="register.html" style="color: #33A55A;font-size: .87rem;">点我注册</a></span>
+								</div>
+					    </div>
+					    
+					    <!--合作商登录-->
+					    <div id="hezuo" class="tab-pane fade">
+					        <!--合作商名--必填-->
+					        <form action="">
+								    <div class="input-group col-12">
+										  <div class="input-group-prepend">
+										    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe62a;</i></span>
+										  </div>
+										  <input type="text" id="h_username" class="form-control" placeholder="请输入合作商名" aria-label="Username" aria-describedby="basic-addon1">
+										</div>
+										 <!--输入合作商密码--必填-->
+								    <div class="input-group col-12">
+										  <div class="input-group-prepend">
+										    <span class="input-group-text" style="background: #ffffff;"><i class="iconfont" style="color:#33A55A;">&#xe6ac;</i></span>
+										  </div>
+										  <input type="password" id="h_pwd" class="form-control" placeholder="请输入密码" aria-label="Username" aria-describedby="basic-addon1">
+										</div>
+										<!--滑动验证-->
+										<div class="input-group col-12">
+										 	 <div class="verify-wrap" id="verify-wrap2"></div>
+										</div>
+										<!--合作商登录按钮-->
+										<div class="col-12 hz_btn">
+											 <button type="submit" class="btn" id="send_he" style="width: 100%;font-size: .87rem;background:#33A55A;color:#ffffff;margin-top:.2rem;">登录</button>
+										</div>
+								</form>
+					    </div>
+				    </div>	
+				</div>
+			</div>
+			<div class="row fot" style="width: 100%;">
+				 <div class="col-12">
+				 		<p class="text-center">服务热线4008 020 666(周一至周日9:00~21:00)</p>
+				 </div>
+				  <div class="col-12">
+				 		<p class="text-center">CopyRight © 2014-2017, All Rights Reserved 版权所有 车享 沪ICP备14000481号</p>
+				 </div>
+			</div>
+		</div>
+		
+		<!--脚本-->
+		<script type="text/javascript">
+   			var tog_code = false;
+		    $(function(){
+						//滑动验证				
+						console.log(tog_code)
+						var SlideVerifyPlug = window.slideVerifyPlug;
+						//父盒子宽度
+						var verifyWidth = parseInt(getStyle(document.querySelectorAll('.verify_box')[0],'width'))
+						var verifyPadding = parseInt(getStyle(document.querySelectorAll('.verify_box')[0],'paddingLeft'))
+						function getStyle(obj,attr){
+							return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr]
+						}
+						//普通用户滑动验证
+						var slideVerify = new SlideVerifyPlug('#verify-wrap',{
+							wrapWidth:'100%',
+				            initText:'请移动滑块',
+				            sucessText:'验证通过',
+				            getSucessState:function(res){
+				           		
+								//console.log(res);
+				           		tog_code = res
+				           		console.log(tog_code)
+				           	}
+				           	
+						});
+						
+						$("#resetBtn").on('click',function(){
+							slideVerify2.resetVerify();
+						})
+						$("#getState").on('click',function(){
+							alert(slideVerify2.slideFinishState);
+						})
+						
+						//合作商用户滑动验证
+						var slideVerify2 = new SlideVerifyPlug('#verify-wrap2',{
+							wrapWidth:verifyWidth-2*verifyPadding,//设置 容器的宽度 ，默认为 350 ，也可不用设，你自己css 定义好也可以，插件里面会取一次这个 容器的宽度
+				            initText:'请移动滑块',  //设置  初始的 显示文字
+				            sucessText:'验证通过',//设置 验证通过 显示的文字
+				            getSucessState:function(res){
+				           		//当验证完成的时候 会 返回 res 值 true，只留了这个应该够用了 
+				           		console.log(res);
+				           	}
+						});
+							$("#resetBtn2").on('click',function(){
+								slideVerify.resetVerify();//可以重置 插件 回到初始状态 
+							})
+							$("#getState2").on('click',function(){
+								alert(slideVerify.slideFinishState);   //这个可以拿到 当前验证状态  是否完成
+							})
+								
+						
+						
+						
+				})
+		    
+					//普通会员登录
+					function isPhone(){
+						var phone = $('#userphone').val()
+						if(!(/^1[34578]\d{9}$/.test(phone))){
+								alert('手机号码格式错误，请重新输入');
+								$('#userphone').val("");
+								return false
+						}
+					}
+
+					// 普通会员获取验证码
+					function getCode(){
+						var phone = $('#userphone').val().trim()
+						var flag_code = tog_code
+						console.log(flag_code)
+						if(phone == ''){
+							alert('请先输入手机号')
+						}else if(phone != '' && flag_code == false){
+							alert('请先滑动滑块验证')
+						}else if(phone != '' && flag_code == true){
+							// 获取验证码
+							$.ajax({
+								type: "POST",
+				  		   		dataType:'json',
+								url: paths + "login/register",
+								data:{phone:phone},
+								success: function(msg){
+								 console.log(msg)
+							   }
+
+							})
+						}
+					}
+					
+		</script>
+</body>
+</html>

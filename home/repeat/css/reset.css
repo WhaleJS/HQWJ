@@ -4,6 +4,7 @@ body,html,div,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,form{
 }
 body{
 	background:#f2f2f2!important;
+	position: relative;
 }
 ul{
 	list-style: none;

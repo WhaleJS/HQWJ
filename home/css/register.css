@@ -1,0 +1,47 @@
+/*页面容器*/
+.body_box{
+	overflow: hidden;
+	/*height: 600px;*/
+	margin-top: 2rem;
+}
+.body_box .login_box{
+	background: #ffffff;
+	box-shadow: 3px 4px 5px #cccccc;
+}
+input::-webkit-input-placeholder{
+	font-size: 0.87rem;
+	color: #666666;
+}
+.fot p{
+	color: #999;
+	font-size: 0.75rem;
+}
+.col-12{
+	margin-top: 1.2rem;
+}
+
+/*媒体查询*/
+/*桌面端*/
+@media only screen and (min-width:998px) {
+	.body_box .login_box{
+		background: #ffffff;
+		box-shadow: 3px 4px 5px #cccccc;
+		margin-top: 5.62rem;
+	}
+	.fot{
+		margin-top: 8.12rem;
+	}
+	
+}	
+	
+}
+@media only screen and (min-width:768px){
+
+}
+
+/*适配平板*/
+@media only screen and (max-width:768px){
+	.fot{
+	  margin-top: 1.8rem;
+	}
+}
