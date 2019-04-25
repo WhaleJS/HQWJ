@@ -5,7 +5,7 @@
     <!--IE兼容-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--移动端视口标签-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <!--重置css-->
     <link rel="stylesheet" type="text/css" href="home/repeat/css/reset.css"/>
     <!--boot4css-->
@@ -80,12 +80,16 @@
 			    </ul>
 			    <!--登录注册-->
 		    	<div class="loginBox">
-		    		<a href="javascript:viod(0)" id="login">个人中心</a>
-		    		<a href="javascript:viod(0)" id="register">退出</a>
+		    		<a href="home/login.html" id="login">登录</a>
+		    		<a href="home/register.html" id="register">注册</a>
 		    	</div>
 			  </div>
 			</div>
 		</nav>
+		<!--回到顶部-->
+	<div class="fh_top d-flex justify-content-center align-items-center" id="retuTop">
+		<i class="iconfont">&#xe602;</i>
+	</div>
 			<!--轮播-->
 		<div id="demo" class="carousel slide" data-ride="carousel">
 			  <!-- 指示符 -->
@@ -360,22 +364,63 @@
 		<script>
 				$(function(){
 						//判断导航
-            var pathname = window.location.pathname
-            var nav_one = '/' + $('.index_cor').attr('href')
-            if(pathname == nav_one){
-            	$(".index_cor").css("color","#29CC5F");
-            }
-						//解决手机端无法使用手势滑动图片
-						//banner轮播
-					 	var myTouch = util.toucher(document.getElementById('demo'));
-			          myTouch.on('swipeLeft',function(e){
-			              $('.carousel-control-next').click();
-			        	 }).on('swipeRight',function(e){
-			              $('.carousel-control-prev').click();
-			          });
+		            var pathname = window.location.pathname
+		            var nav_one = '/' + $('.index_cor').attr('href')
+		            if(pathname == nav_one){
+		            	$(".index_cor").css("color","#29CC5F");
+		            }
+								//解决手机端无法使用手势滑动图片
+								//banner轮播
+							 var myTouch = util.toucher(document.getElementById('demo'));
+					          myTouch.on('swipeLeft',function(e){
+					              $('.carousel-control-next').click();
+					        	 }).on('swipeRight',function(e){
+					              $('.carousel-control-prev').click();
+					          });
+					          
+					      var retop = document.getElementById('retuTop')
+					      console.log(retop)
+					      $(window).on('scroll', function() {
+								   if ($(this).scrollTop() > 50) { /* 返回顶部按钮将在用户向下滚动100像素后出现 */
+										   $('#retuTop').fadeIn()
+								   } else {
+										   $('#retuTop').fadeOut()
+								   }
+		  					});
+			  	 	  	retop.onclick = function(e) {
+			   					$("html, body").animate({scrollTop: 0}, 500);
+			 					 };   
 		    });      
 		          
-			
+
+			// 登录状态
+			var loginId = localStorage.getItem('loginId')
+			console.log('登录状态' + loginId)
+			if(loginId == 1){
+				console.log('1111111111111111')
+				$('#login').html('<a href="home/person.html" id="person">个人中心</a>')
+				$('#register').html('<a href="#" id="clear">退出</a>')
+
+			}
+			// if(loginId == 2){
+			// 	$('#person').html('<a href="../../home/login.html" id="login">登录</a>')
+			// 	$('#clear').html('<a href="../../home/register.html" id="register">注册</a>')
+			// }
+
+			$('#clear').click(function(event) {
+				var Ytui = confirm('您确认出登录状态吗?')
+				if(Ytui == true){
+					window.location.replace('http://192.168.0.130/index.html')
+					console.log('退出')
+					localStorage.setItem('loginId','2')
+					console.log(loginId)
+					$('#person').html('<a href="../../home/login.html" id="login">登录</a>')
+					$('#clear').html('<a href="../../home/register.html" id="register">注册</a>')
+				}
+				
+			});
+
+
 		</script>
 </body>
 </html>
