@@ -27,24 +27,103 @@
 	  <!--压缩boot-min.js-->
 	  <script src="dist/bootstrap/js/bootstrap.min.js"></script>
       <title>关于公司</title>
-   
+   	  
 	</head>
 <body>
 	  <!--插入导航-->
 		<div class="first_div"></div>
 		
-		<!--banner-->
-			<div class="baner" style="width: 100%;">
-				 <img src="img/banner.png" class="img-fluid"/>
-			</div>		
+			<!--banner-->
+	  <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading" style="color: #ffffff;">环球万家-汽车全能管家</h1>
+          <p style="color: #ffffff;padding-top: 2rem;">细致入微，精心呵护</p>
+        </div>
+      </section>
+      
+      <!--页面容器-->
+			<div class="container mainten">
+				<!--页面标题图片-->
+				<div class="row">
+					<div class="col-6 mx-auto top-img">
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-12 mx-auto top-detail">
+						
+					</div>
+				</div>
+				<!--文化介绍-->
+				<div class="row justify-content-center title-one">
+						<div class="col-md-4 col-10 top_title f_start"><h4 class="text-center">文化理念</h4></div>
+				</div>
+				<div class="row justify-content-around align-items-center">
+					 <div class="col-md-5 wen-img">
+					 	  <!-- <img src="img/ab-detail.png" class="img-fluid"/> -->
+					 </div>
+					 <div class="col-md-5 wen-detail justify-content-center">
+					 	 <!--  <p class="de-title">文化理念</p>
+					 	  <p class="de-futitle">CULTURAL&nbsp;CONCEPT</p>
+					 	  <img src="img/ooder_bootom.png" alt="" />
+					 	  <p class="de-paper">企业文化，或称组织文化（Corporate Culture或Organizational Culture），是一个组织由其价值观、信念、仪式、符号、处事方式等组成的其特有的文化形象，简单而言，就是企业在日常运行中所表现出的各方各面。</p> -->
+					 </div>
+				</div>
+				<!--服务介绍-->
+				<div class="row justify-content-center title-one" style="margin-top:3.5rem;">
+						<div class="col-md-4 col-10 top_title f_start"><h4 class="text-center">服务介绍</h4></div>
+				</div>
+				<div class="row justify-content-around align-items-center" style="padding-bottom:4rem;">
+						<div class="col-md-5 fu-detail justify-content-center">
+						 	<!--   <p class="de-title">文化理念</p>
+						 	  <p class="de-futitle">CULTURAL&nbsp;CONCEPT</p>
+						 	  <img src="img/ooder_bootom.png" alt="" />
+						 	  <p class="de-paper">企业文化，或称组织文化（Corporate Culture或Organizational Culture），是一个组织由其价值观、信念、仪式、符号、处事方式等组成的其特有的文化形象，简单而言，就是企业在日常运行中所表现出的各方各面。</p> -->
+						 </div>
+						 
+						 <div class="col-md-5 fu-img">
+						 	  <!-- <img src="img/ab-detail.png" class="img-fluid"/> -->
+						 </div>
+				</div>
+			</div>
 		<!--尾部插入footer-->
 		<div class="last_div"></div>
 		
 		<!--脚本-->
 		<script>
+			    var paths = 'http://gw.huanqiuwanjia.com/Api/';
+				var pathImg = 'http://gw.huanqiuwanjia.com';
 				$(function(){
-					
-					
+					$.ajax({
+			  		   		dataType:'json',
+						    url: paths + "index/about",
+						    data:{},
+						    success: function(data){
+						    	console.log(data)
+						    	var abdetail = data.about
+						    	var abbanner = pathImg + data.banner[0].img_path
+						    	console.log(abbanner)
+						    	// 头部banner
+						    	$('.jumbotron').css('background-image','url('+abbanner+')')
+						    
+						    	// 顶部简介
+						    	$('.top-img').append(`<img src="${pathImg + abdetail[0].img_path}" class="img-fluid"/>`)
+						    	$('.top-detail').append(`<p class="">${abdetail[0].description}</p>`)
+
+						    	// 文化理念
+						    	$('.wen-img').append(`<img src="${pathImg + abdetail[1].img_path}" class="img-fluid"/>`)
+						    	$('.wen-detail').append(`<p class="de-title">${abdetail[1].title}</p>  
+					    								<p class="de-futitle">CULTURAL&nbsp;CONCEPT</p>
+														<img src="img/ooder_bootom.png" alt="" />
+														<p class="de-paper">${abdetail[1].description}</p>`)
+						    	// 服务理念
+						    	$('.fu-img').append(`<img src="${pathImg + abdetail[2].img_path}" class="img-fluid"/>`)
+						    	$('.fu-detail').append(`<p class="de-title">${abdetail[2].title}</p>  
+					    								<p class="de-futitle">CULTURAL&nbsp;CONCEPT</p>
+														<img src="img/ooder_bootom.png" alt="" />
+														<p class="de-paper">${abdetail[2].description}</p>`)
+						    }
+						  })	
 		    	});      
 			
 		</script>

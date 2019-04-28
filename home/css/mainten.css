@@ -27,7 +27,6 @@ body{
 	background: #ffffff;
 	position:relative;
 	bottom:3.2rem;
-	border: 1px solid black;
 }
 /*地图显示,地区选择*/
 .mainten .seclect_box{
@@ -51,7 +50,6 @@ body{
 /*地图*/
 .mainten .d_box{
 	padding-top: 1.25rem;
-	border-bottom: 1px solid red;
 }
 .mainten .d_box .ditu{
 	height: 400px;
@@ -60,7 +58,6 @@ body{
 }
 .mainten .d_box .list_dian{
 	height: 400px;
-	background: darkgoldenrod;
 	padding-left: 0;
 	padding-right: 0;
 	overflow: auto;
@@ -107,10 +104,12 @@ body{
 	/*门店列表*/
 	.mainten .d_box .list_dian{
 		height: 400px;
-		background: darkgoldenrod;
-		padding-left:15px;
-		padding-right:15px;
+		/*padding-left:15px;
+		padding-right:15px;*/
 		overflow: auto;
+	}
+	.mainten .d_box{
+		width: 100%
 	}
 	/*地图*/
 	.mainten .d_box .ditu{

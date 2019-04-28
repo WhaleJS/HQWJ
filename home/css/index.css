@@ -24,18 +24,64 @@
 	/*background: #ffffff;*/
 	overflow: hidden;
 }
+.index_middle .g_img{
+	background: #FFFFFF;
+	padding: 8rem 0 8rem 0;
+}
+.index_middle .g_paper{
+	position: relative;
+	background: url(../img/inad-right.png) no-repeat center center;
+	padding-left: 0;
+	padding-right: 0;
+}
+.index_middle .g_paper .poab_box{
+	background: rgba(26, 102, 0,.8);
+	height: 100%;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+.index_middle .g_paper .ch_more{
+	display: block;
+	width: 6.25rem;
+	height: 1.87rem;
+	border: 2px solid #ffffff;
+	text-align: center;
+	line-height: 1.8;
+	font-size: 0.87rem;
+	color: #ffffff;
+	margin-bottom: 1rem;
+}
+.index_middle .g_paper .c_paper{
+	font-size:.98rem;
+	margin-bottom: 1.5rem;
+}
+
 /*公用标题样式*/
 .col-md-4 h4{
-	background: yellow;
 	font-weight: bold;
 }
 .col-md-7 h4{
-	background: yellow;
 	font-weight: bold;
 }
+.guanyu{
+	background:url(../img/in_ab.png)no-repeat center top;
+	margin-bottom: 3rem;
+}
+.teamf{
+	background:url(../img/in_team.png)no-repeat center top;
+}
+.zhuyin{
+	background:url(../img/in_zhu.png)no-repeat center top;
+}
+.znews{
+	background:url(../img/in_new.png)no-repeat center top;
+}
+
 /*主营业务*/
 .index_top{
-	border: 1px solid black;
 	margin-top:4rem;
 	/*overflow: hidden;*/
 }
@@ -45,12 +91,16 @@
 	
 }
 
+
 .index_top .tab_box .tab_img{
-	width: 13.37rem;
 	height: 10rem;
 	background: #ffffff;
 	margin-bottom: 1.87rem;
 	cursor: pointer;
+	transition: all .6s ease;
+}
+.index_top .tab_box .tab_img:hover{
+	background:#33A55A;
 }
 .index_top .tab_box .tab_img img{
 	transition: all .8s ease;
@@ -67,23 +117,21 @@
 
 /*创始人*/
 .index_middle{
-	border: 1px solid black;
 	margin-top: 4.37rem;
 }
 .index_middle .col-md-10{
 	margin-top:2.5rem;
 }
+ 
 
 /*团队风采*/
 .index_bottom{
-	border: 1px solid black;
 	margin-top:4.37rem;
 }
 /*团队风采-->明星列表*/
 .index_bottom .start_list{
-	border: 1px solid #000066;
 	margin-top:2.5rem;
-	background-image: url(../img/xian.png);
+	background-image: url(../img/team-bg.png);
 	background-repeat:no-repeat;
 	background-position:bottom center;
 	/*background-size:contain;*/
@@ -102,7 +150,6 @@
 	width: 100%;
 	height: 70%;
 	position: relative;
-	box-shadow: 0px 10px 15px #cccccc;
 }
 .index_bottom .start_list .col-md-3 #start_img .img-fluid{
 	width: 100%;
@@ -125,7 +172,6 @@
 
 /*最新要闻*/
 .index_news{
-	border: 1px solid black;
 	margin-top:4.37rem;
 	margin-bottom: 3rem;
 }
@@ -188,17 +234,21 @@
 /*媒体查询*/
 @media only screen and (min-width:768px) {
 	.index_middle .g_img{
-		width: 50%;
-		/*padding-left: 15px;*/
-	}
-	.index_middle .g_paper{
-		width: 47%;
+		/*margin-top: 1.5rem;*/
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+	.index_middle .g_paper{
+		/*width: 47%;*/
+		/*padding-left: 15px;
+		padding-right: 15px;*/
 	}
 	.index_bottom .start_list .col-md-3{
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.index_top .tab_box div{
+		width: 15%;
 	}
 }
 @media only screen and (max-width:768px) {
@@ -212,15 +262,24 @@
 	}
 	.index_middle .g_img{
 		width: 100%;
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-	.index_middle .g_paper{
-		width: 100%;
+		/*margin-bottom: 1.5rem;*/
 		padding-left: 15px;
 		padding-right: 15px;
 		margin-left: 15px;
 		margin-right: 15px;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	.index_middle .g_paper{
+		width: 100%;
+		/*height: 14rem;*/
+		padding-left:0;
+		padding-right:0;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	.index_top .tab_box div{
+		width: 47%;
 	}
 }
 
